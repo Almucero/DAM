@@ -1,0 +1,59 @@
+
+* {
+    text-align: center;
+}
+body {
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: justify;
+    background-color: aqua;
+    font-size: 19pt;
+    font-family: monospace;
+}
+h2 {
+    color: blueviolet;
+    font-size: 32pt;
+    text-shadow: 30px;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h3 {
+    color: chartreuse;
+    font-size: 26pt;
+    text-shadow: 30px;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+img {
+    width: 400px;
+    height: 400px;
+}
+.epico {
+    color:purple;
+}
+.malashierbas{
+    color:forestgreen;
+    font-weight: bolder;
+    font-size: 21pt;
+    text-decoration: underline;
+}
+#malashierbasgordas {
+    font-size: 38pt;
+    text-shadow: 30px;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:forestgreen;
+    text-decoration: underline;
+}
+q:lang(perro) {
+    quotes: "~" "~";
+}
+.ocultamiento {
+    display: none;
+    background-color: indigo;
+    padding: 20px;
+}
+div:hover .ocultamiento {
+    display: block;
+}
