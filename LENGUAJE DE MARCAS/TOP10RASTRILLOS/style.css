@@ -17,6 +17,9 @@ h2 {
     font-weight: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+h2::first-letter{
+    font-size: 50pt;
+}
 h3 {
     color: chartreuse;
     font-size: 26pt;
