@@ -1,6 +1,6 @@
 Proceso Ejercicio7
-	//Obtener n primeros números primos
-	Escribir "Cuántos números primos quieres obtener";
+	//Comprobar si es primo
+	Escribir "Ingresa el número que quieras comprobar si es primo: ";
 	Definir num1 Como Entero;
 	Leer num1;
 	Definir esprimo Como Logico;
@@ -18,16 +18,4 @@ Proceso Ejercicio7
 	SiNo
 		Escribir "No es primo";
 	FinSi
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 FinProceso

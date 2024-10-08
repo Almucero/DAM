@@ -1,4 +1,4 @@
-Proceso sin_titulo
+Proceso Calculadora
 	Escribir "Introduzaca un numero:";
 	definir num1 como real;
 	leer num1;
@@ -27,7 +27,7 @@ Proceso sin_titulo
 		De Otro Modo:
 			Escribir "Opción no válida";
 	FinSegun
-	
+	//Tipos de contadores:
 	definir contador como entero;
 	Para contador<-1 Hasta 10 Con Paso 1 Hacer
 		Escribir contador;
@@ -42,16 +42,4 @@ Proceso sin_titulo
 		Escribir contador;
 		contador<- contador + 1;
 	Hasta Que contador > 10;
-	
-	Escribir "Introduzca un numero:";
-	Definir num Como Entero;
-	Leer num;
-	Definir factorial Como Entero;
-	factorial <- num;
-	Definir contador Como Entero;
-	Para contador <- num-1 Hasta 2 Con Paso -1 Hacer
-		factorial <- fatorial * contador;
-	FinPara
-	Escribir "El factorial de ", num, "es", factorial;
-	
 FinProceso

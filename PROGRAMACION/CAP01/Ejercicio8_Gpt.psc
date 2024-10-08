@@ -12,7 +12,7 @@ Proceso NumerosPrimosGpt
             FinSi
         Fin Para
         Si divisores = 2 Entonces
-            Escribir num2;
+            Escribir num2, ", " sin saltar;
             contador <- contador + 1;
         FinSi
         num2 <- num2 + 1;
