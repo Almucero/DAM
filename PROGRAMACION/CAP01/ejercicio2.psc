@@ -1,5 +1,5 @@
 Proceso Ejercicio2
-	//sumar desde x hasta y
+	//sumar desde x hasta y, está mal, la idea es sumar como en el ejercicio 1, pero dando un origen, ver version de práctica
 	Escribir "Escoge el número x:";
 	Definir num1 Como Entero;
 	leer num1;

@@ -8,6 +8,4 @@ Algoritmo Ejercicio3
 	Para contador<-1 Hasta 10 Con Paso 1 Hacer
 		Escribir num1, " x ", contador, " = ", num1*contador;
 	FinPara
-	
-	
 FinAlgoritmo

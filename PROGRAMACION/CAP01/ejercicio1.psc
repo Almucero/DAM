@@ -1,4 +1,5 @@
 Proceso Ejercicio1
+	//Ejemplo: 10 -> 10+9+8+7+6+5+4+3+2+1=55
 	Escribir "Cuantos números quieres sumar?";
 	Definir num Como Entero;
 	leer num;
