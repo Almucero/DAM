@@ -16,11 +16,11 @@ public class Calculos {
     public double getOperando2() {
         return operando2;
     }
-    public String getOperador() {
-        return operador;
-    }
     public void setOperando2(int operando2) {
         this.operando2 = operando2; 
+    }
+    public String getOperador() {
+        return operador;
     }
     public void setOperador(String operador) {
         this.operador = operador; 
@@ -47,7 +47,7 @@ public class Calculos {
         }
         switch(operador){
             case "+":
-                this.resultado = this.resultado
+                this.resultado = this.operando1 + this.operando2;
             break;
             case "-":
             break;
@@ -60,9 +60,6 @@ public class Calculos {
         }
         return this.operando1;
     }
-
-
-
 }
 //set operando1 set operando2 set operador get resultado //switch con valor del operador(+, -, *, /, ...)
 //operador -> (+ = 1, - = 2, * = 3, / = 4, ^ = 5)
