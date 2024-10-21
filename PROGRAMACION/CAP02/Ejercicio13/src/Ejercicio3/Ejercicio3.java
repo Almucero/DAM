@@ -33,5 +33,6 @@ public class Ejercicio3 {
                 System.out.println("Introduzca un día de la semana válido");
                 break;
         }
+        scanner.close();
     }
 }

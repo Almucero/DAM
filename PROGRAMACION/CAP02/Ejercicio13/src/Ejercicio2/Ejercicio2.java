@@ -21,5 +21,6 @@ public class Ejercicio2 {
                 System.out.println("Introduzca un valor válido");
                 break;
         }
+        scanner.close();
     }
 }
