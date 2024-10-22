@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio6 {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        double g = 9.81;
+        final double g = 9.81;
         System.out.println("Cálculo del tiempo de caida de un objeto.");
         System.out.print("Por favor, introduzca la altura (en metros) desde la que cae el objeto: ");
         double h = Double.parseDouble(scanner.nextLine());

@@ -18,10 +18,10 @@ public class Ejercicio1 {
                 System.out.println("Programación");
                 break;
             case "Jueves", "jueves":
-                System.out.println("Lenguaje de marcas");
+                System.out.println("Lenguajes de marcas");
                 break;
             case "Viernes", "viernes":
-                System.out.println("Lenguaje de marcas");
+                System.out.println("Lenguajes de marcas");
                 break;
             default:
                 System.out.println("Introduzca un día de la semana válido");
