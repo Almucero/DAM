@@ -17,7 +17,7 @@ public class Ejercicio24 {
                 System.out.println("Por favor, seleccione un cargo válido");
             }
             else {
-                System.out.print("¿Cuántos días ha estado de viaje visitando clientes? ");
+                System.out.print("¿Cuántos días ha estado de viaje visitando clientes?: ");
                 int Viajes = Integer.parseInt(scanner.nextLine());
                 if (Viajes>=23) {
                     System.out.println("No puede haber viajado tanto");
