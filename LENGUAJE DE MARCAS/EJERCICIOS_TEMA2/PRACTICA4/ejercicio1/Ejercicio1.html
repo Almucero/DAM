@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Práctica 4 - Ejercicio1">
+        <title>Ejercicio 01 Práctica 4</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <center><img src="IAT-LOGOTIPO.jpg" atl="IAT-LOGOTIPO" width="300" height="118"></center>
+        <form action="procesarincidencia.php" method="post">
+            <fieldset>
+                <legend>Nueva incidencia</legend>
+                    <label for="Profesor">Profesor *:</label>
+                    <input type="text" id="Profesor" required><br><br>
+                    <label for="Correo">Correo electrónico *:</label>
+                    <input type="email" id="Correo" required><br><br>
+                    <label for="Departamento">Departamento *:</label>
+                    <input type="text" id="Departamento" required><br><br>
+                    <label for="Aula">Aula *:</label>
+                    <input type="text" id="Aula" required><br><br>
+                    <label for="Dia">Dia de la incidencia *:</label>
+                    <input type="date" id="Departamento" required><br><br>
+                    <label for="Hora">Hora de la incidencia *:</label>
+                    <input type="time" id="Departamento" required><br><br>
+                    <label for="Descripcion">Descripción de la incidencia *:</label>
+                    <input type="text" id="Descripcion" required><br><br>
+                    <label for="Imagen">Imágen de la incidencia (opcional):</label>
+                    <p><input type="file" id="Imagen"><br></p>
+                    <input type="submit" value="Enviar incidencia">
+                    <input type="reset" value="Borrar formulario">
+            </fieldset>
+        </form>
+    </body>
+</html>

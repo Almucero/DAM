@@ -1,0 +1,13 @@
+form {
+    background-color: #f4f1ed;
+    color: firebrick;
+    border-color: darkgoldenrod;
+    border-radius: 7px;
+    width: 400px;
+}
+El formulario debe quedar “encapsulado” con la siguiente con􀏐iguración:
+o Color de fondo #f4f1ed.
+o Color de letra 􀏐irebrick.
+o Color de borde darkglodenrod.
+o Radio del borde de 7 píxeles.
+o Ancho de 400 píxeles.
