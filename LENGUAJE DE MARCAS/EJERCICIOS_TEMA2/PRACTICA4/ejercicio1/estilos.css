@@ -4,10 +4,28 @@ form {
     border-color: darkgoldenrod;
     border-radius: 7px;
     width: 400px;
+    margin: auto;
 }
-El formulario debe quedar “encapsulado” con la siguiente con􀏐iguración:
-o Color de fondo #f4f1ed.
-o Color de letra 􀏐irebrick.
-o Color de borde darkglodenrod.
-o Radio del borde de 7 píxeles.
-o Ancho de 400 píxeles.
+footer {
+    background-color: #333;
+    padding: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+h3 {
+    color: #f7c600;
+}
+input {
+    margin-bottom: 5px;
+}
+#pie {
+    width: 48px;
+    height: 48px;
+}
+legend {
+    color: darkblue;
+    font-weight: bold;
+}
+textarea {
+    width: 140px;
+}
