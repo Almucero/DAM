@@ -1,0 +1,14 @@
+img {
+    height: 300px;
+    width: 300px;
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+th {
+    border: 2px solid black;;
+    padding: 5px;
+}
+table {
+    border-collapse: collapse;
+}
