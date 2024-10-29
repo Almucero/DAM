@@ -8,8 +8,5 @@ public class Ejercicio1{
         System.out.printf("x - y = %d%n", x-y);
         System.out.printf("x * y = %.8f%n", (double)x/y);
         System.out.printf("x * y = %d%n",x*y);
-        
-
-
     }
 }

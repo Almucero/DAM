@@ -26,21 +26,7 @@ public class App {
     }
 
     public static void ejercicio2(){
-        Persona paula = new Persona();
-        Persona javier = new Persona();
-        Perro goofy = new Perro();
-        Perro milu = new Perro();
-        Perro snoopy = new Perro();
-        Perro pluto = new Perro();
-        Perro laika  = new Perro();
-        Gato tom = new Gato();
-        Gato silvestre = new Gato();
-        Caballo rocinante = new Caballo();
-        Caballo bucefalo = new Caballo();
-        Caballo pegaso = new Caballo();
-        Animal pato_lucas = new Animal();
-        Mineral pirita = new Mineral();
-        Mineral cuarzo = new Mineral();
+        Animal animal1 = new Animal();
     }
     public static void main(String[] args) throws Exception {
         ejercicio1();

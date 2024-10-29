@@ -7,5 +7,4 @@ public class Ejercicio7 {
         char ultimaLetra = 'z';
         System.out.printf("%s%n", ""+primeraLetra+ultimaLetra+abc);
     }
-    
 }

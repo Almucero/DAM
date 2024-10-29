@@ -10,7 +10,5 @@ public class Ejercicio6 {
         System.out.printf("IVA %.2f%n", iva);
         System.out.println("-----------");
         System.out.printf("Total %.2f%n", total);
-
     }
-    
 }

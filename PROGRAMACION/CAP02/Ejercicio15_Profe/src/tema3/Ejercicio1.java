@@ -19,7 +19,5 @@ public class Ejercicio1 {
         catch (Exception e) {
             System.out.println("Ocurrió un error inesperado");
         }
-        
     }
-    
 }
