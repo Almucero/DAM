@@ -45,8 +45,12 @@ public class Ejercicio11 {
         int digitos3 = calcularDigitos(long3);
 
         System.out.printf("n%s | n2%s | n3%s%n", generarEspacios(digitos1-1), generarEspacios(digitos2-2), generarEspacios(digitos3-2));
-        System.out.println(generarGuiones(digitos1)+generarGuiones(digitos2)+generarGuiones(digitos3)+generarGuiones(11));
-        System.out.printf("%d%s | %d%s | %d%s%n", num1, generarEspacios(digitos1-1), num1*num1, generarEspacios(digitos2-2), num1*num1*num1, generarEspacios(digitos3-2));
+        System.out.println(generarGuiones(digitos1)+generarGuiones(digitos2)+generarGuiones(digitos3)+generarGuiones(6));
+        System.out.printf("%d | %d | %d %n", num1, num1*num1, num1*num1*num1);
+        System.out.printf("%d | %d | %d %n", num2, num2*num2, num2*num2*num2);
+        System.out.printf("%d | %d | %d %n", num3, num3*num3, num3*num3*num3);
+        System.out.printf("%d | %d | %d %n", num4, num4*num4, num4*num4*num4);
+        System.out.printf("%d | %d | %d %n", num5, num5*num5, num5*num5*num5);
     }
 }
 //(n + 5 - 1)^2
