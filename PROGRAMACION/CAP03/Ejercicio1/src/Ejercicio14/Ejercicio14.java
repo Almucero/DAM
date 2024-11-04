@@ -7,37 +7,42 @@ public class Ejercicio14 {
         long base=0;
         boolean baseValida=false;
         boolean exponenteValido=false;
-        try {
-            while (baseValida!=true) {
-                try {
-                    System.out.print("Introduzca la base: ");
-                    base = Integer.parseInt(System.console().readLine());
-                    baseValida=true;
+        boolean cerrar=false;
+        while (cerrar!=true) {
+            try {
+                while (baseValida!=true) {
+                    try {
+                        System.out.print("Introduzca la base: ");
+                        base = Integer.parseInt(System.console().readLine());
+                        baseValida=true;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido para la base");
+                        System.out.println();
+                    }
                 }
-                catch (NumberFormatException e) {
-                    System.out.println("Error. Debe introducir un valor válido para la base");
-                    System.out.println();
+                while (exponenteValido!=true) {
+                    try {
+                        System.out.print("Introduzca el exponente: ");
+                        exponente = Integer.parseInt(System.console().readLine());
+                        exponenteValido=true;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido para el exponente");
+                        System.out.println();
+                    }
                 }
+                long resultado=1;
+                for (long i=0; i<exponente; i++) {
+                    resultado = resultado*base;
+                }
+                System.out.println(base+"^"+exponente+" = "+resultado);
+                cerrar=true;
             }
-            while (exponenteValido!=true) {
-                try {
-                    System.out.print("Introduzca el exponente: ");
-                    exponente = Integer.parseInt(System.console().readLine());
-                    exponenteValido=true;
-                }
-                catch (NumberFormatException e) {
-                    System.out.println("Error. Debe introducir un valor válido para el exponente");
-                    System.out.println();
-                }
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado");
+                cerrar=true;
             }
-            long resultado=1;
-            for (long i=0; i<exponente; i++) {
-                resultado = resultado*base;
-            }
-            System.out.println(base+"^"+exponente+" = "+resultado);
-        }
-        catch (Exception e) {
-            System.out.println("Ocurrió un error inesperado");
         }
     }
 }

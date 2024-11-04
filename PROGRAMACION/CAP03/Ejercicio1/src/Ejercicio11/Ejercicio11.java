@@ -18,7 +18,7 @@ public class Ejercicio11 {
         }
         return espacios;
     }
-    // Método para generar una cadena de espacios según el número dado (digitos)
+    // Método para generar una cadena de guiones según el número dado
     private static String generarGuiones(int cantidad) {
         String guiones = "";
         for (int i = 0; i < cantidad; i++) {
