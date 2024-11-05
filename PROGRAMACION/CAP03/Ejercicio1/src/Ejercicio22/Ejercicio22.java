@@ -1,17 +1,20 @@
 package Ejercicio22;
 
 public class Ejercicio22 {
-    public static boolean esPrimo (int valor) {
-        boolean _esPrimo = true;
-        for (int i=2; i<valor/2; i++) {
-            if (valor%i==0) {
-                _esPrimo=false;
-                break;
+    public static void main(String[] args) {
+        System.out.println("Números primos entre 2 y 100:");
+        for (int num=2; num<=100; num++) {
+            boolean esPrimo=true;
+            int contador=2;
+            while (esPrimo && contador<=num/2) {
+                if (num%contador==0) {
+                    esPrimo=false;
+                }
+                contador++;
+            }
+            if (esPrimo) {
+                System.out.print(num+" ");
             }
         }
-        return _esPrimo;
-    }
-    public static void main(String[] args) {
-        for (int i=2; i<valor/2; i++)
     }
 }

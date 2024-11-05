@@ -1,7 +1,7 @@
 package Ejercicio19;
 
 public class Ejercicio19 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int altura=0;
         char caracter=0;
         boolean alturaValida=false;
@@ -23,9 +23,9 @@ public class Ejercicio19 {
                 while (caracterValido!=true) {
                     try {
                         System.out.print("Introduzca el carácter de relleno: ");
-                        String valor = System.console().readLine();
-                        if (valor.length()==1) {
-                            caracter = valor.charAt(0);
+                        String caracterString = System.console().readLine();
+                        if (caracterString.length()==1) {
+                            caracter = caracterString.charAt(0);
                             caracterValido = true;
                         } else {
                             System.out.println("Error. Debe introducir solo un carácter");
