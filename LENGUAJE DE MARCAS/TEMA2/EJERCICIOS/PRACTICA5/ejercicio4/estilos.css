@@ -1,0 +1,8 @@
+table {
+    border-collapse: collapse;
+    text-align: right;
+}
+th {
+    padding: 5px;
+    border:1px solid black;
+}
