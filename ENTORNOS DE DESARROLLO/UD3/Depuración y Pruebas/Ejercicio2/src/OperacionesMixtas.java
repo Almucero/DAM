@@ -11,8 +11,6 @@ public class OperacionesMixtas {
         String resultado = numeroComoTexto + " " + numero;
         return resultado;
     }
-
-
     /*
      * 2. Devuelve el String "verdadero" o "falso" dependiendo del valor booleano que recibe
      */
@@ -25,7 +23,6 @@ public class OperacionesMixtas {
         }
         return resultado;
     }
-
     /*
      * 3. Concatena dos cadenas de texto dejando un espacio en medio
      * Ejemplo: concatenarTextos("Hola", "Mundo");
@@ -35,7 +32,6 @@ public class OperacionesMixtas {
         String resultado = texto1 + "" + texto2;
         return resultado;
     }
-
     /*
      * 4. Devuelve un mensaje sobre si el número dado es positivo, negativo o cero
      */
@@ -50,7 +46,6 @@ public class OperacionesMixtas {
         }
         return resultado;
     }
-
     /*
      * 5. Devuelve el texto del primer parámetro
      * en mayúsculas o minúsculas dependiendo del 

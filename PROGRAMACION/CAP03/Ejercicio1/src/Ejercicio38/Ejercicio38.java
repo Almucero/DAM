@@ -1,6 +1,28 @@
 package Ejercicio38;
 
 public class Ejercicio38 {
+    public static void piramide(int altura) {
+        for (int fila=2; fila<=altura; fila++) {
+            for (int espacios=1; espacios<=(altura-fila); espacios++) {
+                System.out.print(" ");
+            }
+            for (int asteriscos=1; asteriscos<=(2*fila-1); asteriscos++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void piramideInvertida(int altura) {
+        for (int fila=altura; fila>=1; fila--) {
+            for (int espacios=1; espacios<=(altura-fila); espacios++) {
+                System.out.print(" ");
+            }
+            for (int asteriscos=1; asteriscos<=(2*fila-1); asteriscos++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) throws Exception {
         boolean cerrar=false;
         boolean alturaValida=false;
@@ -16,6 +38,7 @@ public class Ejercicio38 {
                             System.out.println();
                         }
                         else {
+                            altura = (altura+1)/2;
                             alturaValida=true;
                         }
                     }
@@ -24,31 +47,14 @@ public class Ejercicio38 {
                         System.out.println();
                     }
                 }
-                for (int fila=altura; fila>=1; fila--) {
-                    for (int espacios=1; espacios<=(altura-fila); espacios++) {
-                        System.out.print(" ");
-                    }
-                    for (int asteriscos=1; asteriscos<=(2*fila-1); asteriscos++) {
-                        System.out.print("*");
-                    }
-                    System.out.println();
-                }
-                for (int fila=1; fila<=altura; fila++) {
-                    for (int espacios=1; espacios<=(altura-fila); espacios++) {
-                        System.out.print(" ");
-                    }
-                    for (int asteriscos=1; asteriscos<=(2*fila-1); asteriscos++) {
-                        System.out.print("*");
-                    }
-                    System.out.println();
-                }
+                piramideInvertida(altura);
+                piramide(altura);
                 cerrar=true;
             }
             catch (Exception e) {
                 System.out.println("Ocurrió un error inesperado");
                 cerrar=true;
             }
-
         }
     }
 }

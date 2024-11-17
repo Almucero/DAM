@@ -2,7 +2,6 @@ public class EjercicioTestingDebugging {
     public static void main(String[] args) {
         int num1 = 4;
         int num2 = 2;
-
         // Ejecución de las funciones de la clase ComparacionesEnteros
         System.out.println("Son iguales: " + ComparacionesEnteros.sonIguales(num1, num2));
         System.out.println("Es mayor: " + ComparacionesEnteros.esMayor(num1, num2));
@@ -11,7 +10,6 @@ public class EjercicioTestingDebugging {
         System.out.println("Son ambos pares: " + ComparacionesEnteros.sonAmbosPares(num1, num2));
         System.out.println("Al menos uno positivo: " + ComparacionesEnteros.alMenosUnoPositivo(num1, num2));
         System.out.println("Suma es par: " + ComparacionesEnteros.sumaEsPar(num1, num2));
-
         // Ejecución de las funciones de la clase OperacionesMixtas
         System.out.println(OperacionesMixtas.concatenarNumeroTexto(5, "manzanas"));
         System.out.println(OperacionesMixtas.booleanComoTexto(true));
