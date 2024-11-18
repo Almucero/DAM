@@ -1,12 +1,11 @@
 package Ejercicio52;
 
-public class Ejercicio52 {
+public class Ejercicio52bis {
     public static int moverDigitos(int num) {
         int digitoFinal=num/(int)Math.pow(10, longitud(num)-1);
         int numVolteado=voltear(num);
         numVolteado=numVolteado/10;
-        num=voltear(numVolteado)/10;
-        num=num*10+digitoFinal;
+        num=voltear(numVolteado)*10+digitoFinal;
         return num;
     }
     public static int longitud(int num) {
@@ -28,14 +27,16 @@ public class Ejercicio52 {
     public static void main(String[] args) {
         boolean cerrar=false;
         boolean numAceptaddo=false;
+        String numStr="";
         int num=0;
+        int resultado=0;
         while (cerrar!=true) {
             try {
                 while (numAceptaddo!=true) {
                     try {
                         System.out.print("Introduzca un número: ");
-                        num = Integer.parseInt(System.console().readLine());
-                        num = num*10+1;
+                        numStr = System.console().readLine();
+                        num = Integer.parseInt(numStr);
                         numAceptaddo=true;
                     }
                     catch (NumberFormatException e) {
@@ -43,7 +44,20 @@ public class Ejercicio52 {
                         System.out.println();
                     }
                 }
-                System.out.printf("El número resultado es %0"+(longitud(num)-1)+"d", moverDigitos(num));
+
+                if (numStr.charAt(0)=='0') {
+                    resultado = moverDigitos(num);
+                    System.out.printf("%d", resultado);
+                }
+                if (numStr.charAt(1)=='0') {
+                    resultado = moverDigitos(num);
+                    System.out.printf("%0"+longitud(num)+"d", resultado);
+                }
+
+
+
+
+                
                 cerrar=true;
             }
             catch (Exception e) {
