@@ -3,10 +3,7 @@ package Ejercicio52;
 public class Ejercicio52 {
     public static int moverDigitos(int num) {
         int digitoFinal=num/(int)Math.pow(10, longitud(num)-1);
-        int numVolteado=voltear(num);
-        numVolteado=numVolteado/10;
-        num=voltear(numVolteado)/10;
-        num=num*10+digitoFinal;
+        num=voltear(voltear(num)/10)*10+digitoFinal;
         return num;
     }
     public static int longitud(int num) {
@@ -26,29 +23,27 @@ public class Ejercicio52 {
         return numVolteado;
     }
     public static void main(String[] args) {
-        boolean cerrar=false;
-        boolean numAceptaddo=false;
         int num=0;
-        while (cerrar!=true) {
+        while (true) {
             try {
-                while (numAceptaddo!=true) {
+                while (true) {
                     try {
                         System.out.print("Introduzca un número: ");
                         num = Integer.parseInt(System.console().readLine());
-                        num = num*10+1;
-                        numAceptaddo=true;
+                        break;
                     }
                     catch (NumberFormatException e) {
-                        System.out.println("Error. Debe introducir un valor válido");
+                        System.out.println("Error. Debe introducir un valor válido: "+e);
                         System.out.println();
                     }
                 }
-                System.out.printf("El número resultado es %0"+(longitud(num)-1)+"d", moverDigitos(num));
-                cerrar=true;
+                int _longitud=longitud(num);
+                System.out.printf("El número resultado es %0"+_longitud+"d", moverDigitos(num));
+                break;
             }
             catch (Exception e) {
                 System.out.println("Ocurrió un error inesperado: "+e);
-                cerrar=true;
+                break;
             }
         }
     }

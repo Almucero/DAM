@@ -35,7 +35,7 @@ public class Ejercicio6 {
             }
             else {
                 System.out.println("¡Enhorabuena! ¡has acertado!");
-                break;
+                return;
             }
             contador--;
             System.out.printf("Te quedan %d oportunidades%n", contador);

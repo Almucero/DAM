@@ -24,9 +24,9 @@ public class Ejercicio54 {
                         System.out.println();
                     }
                 }
-                for (int fila = altura; fila > 0; fila--) {
-                    for (int asteriscos = 0; asteriscos < fila; asteriscos++) {
-                        if (fila == altura || fila == 1 || asteriscos == 0 || asteriscos == fila - 1) {
+                for (int i=altura; i>0; i--) {
+                    for (int asteriscos=0; asteriscos<i; asteriscos++) {
+                        if (i==altura || i==1 || asteriscos==0 || asteriscos==i-1) {
                             System.out.print("*");
                         } 
                         else {

@@ -2,17 +2,15 @@ package Ejercicio53;
 
 public class Ejercicio53 {
     public static void main(String[] args) {
-        boolean cerrar=false;
-        boolean alturaAceptada=false;
         int altura=0;
-        while (cerrar!=true) {
+        while (true) {
             try {
-                while (alturaAceptada!=true) {
+                while (true) {
                     try {
                         System.out.print("Introduzca la altura de la figura: ");
                         altura = Integer.parseInt(System.console().readLine());
                         if (altura>0) {
-                            alturaAceptada=true;
+                            break;
                         }
                         else {
                             System.out.println("Error. La altura de la figura debe ser como mínimo uno");
@@ -24,17 +22,17 @@ public class Ejercicio53 {
                         System.out.println();
                     }
                 }
-                for (int fila=altura; fila>0; fila--) {
-                    for (int asteriscos=0; asteriscos<fila; asteriscos++) {
+                for (int i=altura; i>0; i--) {
+                    for (int asteriscos=0; asteriscos<i; asteriscos++) {
                         System.out.print("*");
                     }
                     System.out.println();
                 }
-                cerrar=true;
+                break;
             }
             catch (Exception e) {
                 System.out.println("Ocurrió un error inesperado: "+e);
-                cerrar=true;
+                break;
             }
         }
     }

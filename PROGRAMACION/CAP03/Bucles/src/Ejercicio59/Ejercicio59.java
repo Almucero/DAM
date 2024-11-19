@@ -1,27 +1,59 @@
 package Ejercicio59;
 
-import java.util.Scanner;
-
 public class Ejercicio59 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Por favor, introduzca la altura del árbol: ");
-        int altura = scanner.nextInt();
-        
-        for (int i = 0; i < altura - 1; i++) {
-            for (int j = 0; j < altura - i - 1; j++) {
-                System.out.print(" ");
+        int altura=0;
+        while (true) {
+            try {
+                while (true) {
+                    try {
+                        System.out.print("Por favor, introduzca la altura del árbol: ");
+                        altura = Integer.parseInt(System.console().readLine());
+                        if (!(altura<4)) {
+                            break;
+                        }
+                        else {
+                            System.out.println("Error. Debe introducir una altura superior o igual a 4");
+                            System.out.println();
+                        }
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir una altura válida: "+e);
+                        System.out.println();
+                    }
+                }
+                for (int i=0; i<altura-1; i++) {
+                    System.out.print(" ");
+                }
+                System.out.println("*");
+                for (int i=1; i<=altura; i++) {
+                    for (int espacios=1; espacios<=altura-i; espacios++) {
+                        System.out.print(" ");
+                    }
+                    System.out.print("^");
+                    for (int asteriscos=1; asteriscos<=2*i-3; asteriscos++) {
+                        if (i==altura) {
+                            System.out.print("^");
+                        }
+                        else {
+                            System.out.print(" ");
+                        }
+                    }
+                    if (i>1) {
+                        System.out.print("^");
+                    }
+                    System.out.println();
+                }
+                for (int i=0; i<altura-1; i++) {
+                    System.out.print(" ");
+                }
+                System.out.println("Y");
+                break;  
             }
-            for (int j = 0; j < 2 * i + 1; j++) {
-                System.out.print("^");
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e);
+                break;
             }
-            System.out.println();
         }
-        
-        for (int i = 0; i < altura - 1; i++) {
-            System.out.print(" ");
-        }
-        System.out.println("Y");
     }
 }

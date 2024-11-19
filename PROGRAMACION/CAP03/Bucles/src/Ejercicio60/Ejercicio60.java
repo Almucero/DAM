@@ -1,32 +1,39 @@
 package Ejercicio60;
 
-import java.util.Scanner;
-
 public class Ejercicio60 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca la altura de los calcetines: ");
-        int altura = scanner.nextInt();
-        
-        for (int i = 0; i < altura - 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print("*");
+        int altura=0;
+        while (true) {
+            try {
+                while (true) {
+                    try {
+                        System.out.print("Introduzca la altura de los calcetines: ");
+                        altura = Integer.parseInt(System.console().readLine());
+                        if (!(altura<4)) {
+                            break;
+                        }
+                        else {
+                            System.out.println("La altura mínima de los calcetines es 4");
+                            System.out.println();
+                        }
+                        break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido: "+e);
+                        System.out.println();
+                    }
+                }
+                for (int i=0; i<altura-2; i++) {
+                    System.out.println("***    ***   ");
+                }
+                System.out.println("****** ******");
+                System.out.println("****** ******");
+                break;
             }
-            System.out.print("    ");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("*");
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e);
+                break;
             }
-            System.out.println();
         }
-        
-        for (int i = 0; i < 6; i++) {
-            System.out.print("*");
-        }
-        System.out.print(" ");
-        for (int i = 0; i < 6; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
     }
 }

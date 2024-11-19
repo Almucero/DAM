@@ -30,8 +30,8 @@ public class Ejercicio51 {
                 while (num!=0) {
                     int digito = num%10;
                     if (digito!=0 && digito!=8) {
-                        resultado += digito * multiplicando;
-                        multiplicando *= 10;
+                        resultado = resultado+digito*multiplicando;
+                        multiplicando = multiplicando*10;
                     }
                     else {
                         comido=true;

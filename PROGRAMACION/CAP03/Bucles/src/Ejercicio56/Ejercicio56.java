@@ -1,22 +1,40 @@
 package Ejercicio56;
 
-import java.util.Scanner;
-
 public class Ejercicio56 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca la altura de la figura: ");
-        int altura = scanner.nextInt();
-        
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < altura - i - 1; j++) {
-                System.out.print(" ");
+        int altura=0;
+        while (true) {
+            try {
+                while (true) {
+                    try {
+                        System.out.print("Introduzca la altura de la figura: ");
+                        altura = Integer.parseInt(System.console().readLine());
+                        if (!(altura>=1)) {
+                            System.out.println("Error. La altura de la figura debe ser como mínimo 1");
+                            System.out.println();
+                        }
+                        break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido: "+e);
+                        System.out.println();
+                    }
+                }
+                for (int i=altura; i>0; i--) {
+                    for (int espacios=0; espacios<altura-i; espacios++) {
+                        System.out.print(" ");
+                    }
+                    for (int asteriscos=0; asteriscos<i; asteriscos++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+                break;
             }
-            for (int j = 0; j < (2 * i + 1); j++) {
-                System.out.print("*");
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e);
+                break;
             }
-            System.out.println();
         }
     }
 }

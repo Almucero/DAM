@@ -1,26 +1,47 @@
 package Ejercicio57;
 
-import java.util.Scanner;
-
 public class Ejercicio57 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca la altura de la figura: ");
-        int altura = scanner.nextInt();
-        
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < altura - i - 1; j++) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < 1 + 2 * i; j++) {
-                if (j == 0 || j == 2 * i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
+        int altura=0;
+        while (true) {
+            try {
+                while (true) {
+                    try {
+                        System.out.print("Introduzca la altura de la figura: ");
+                        altura = Integer.parseInt(System.console().readLine());
+                        if (!(altura>=1)) {
+                            System.out.println("Error. La altura de la figura debe ser como mínimo 1");
+                            System.out.println();
+                        }
+                        break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido: "+e);
+                        System.out.println();
+                    }
                 }
+                for (int i=altura; i>0; i--) {
+                    //espacios izquierda
+                    for (int espacios=0; espacios<altura-i; espacios++) {
+                        System.out.print(" ");
+                    }
+                    for (int asteriscos=0; asteriscos<i; asteriscos++) {
+                        if (i==altura || asteriscos==i-1 || asteriscos==0) {
+                            System.out.print("*");
+                        }
+                        //espacios del medio
+                        else {
+                            System.out.print(" ");
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
             }
-            System.out.println();
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e);
+                break;
+            }
         }
     }
 }

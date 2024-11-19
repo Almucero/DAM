@@ -5,8 +5,7 @@ public class Ejerciocio2 {
         int aleatorio1 = (int)(Math.random()*4);
         int aleatorio2 = (int)(Math.random()*12);
         String palo="";
-        int cartaNumeral=0;
-        String cartaLiteral="";
+        String carta="";
         switch (aleatorio1) {
             case 0 -> palo="picas";
             case 1 -> palo="corazones";
@@ -14,20 +13,20 @@ public class Ejerciocio2 {
             case 3 -> palo="tréboles";
         };
         switch (aleatorio2) {
-            case 0 -> cartaLiteral="A";
-            case 1 -> cartaNumeral=2;
-            case 2 -> cartaNumeral=3;
-            case 3 -> cartaNumeral=4;
-            case 4 -> cartaNumeral=5;
-            case 5 -> cartaNumeral=6;
-            case 6 -> cartaNumeral=7;
-            case 7 -> cartaNumeral=8;
-            case 8 -> cartaNumeral=9;
-            case 9 -> cartaNumeral=10;
-            case 10 -> cartaLiteral="J";
-            case 11 -> cartaLiteral="Q";
-            case 12 -> cartaLiteral="K";
+            case 0 -> carta="A";
+            case 1 -> carta="2";
+            case 2 -> carta="3";
+            case 3 -> carta="4";
+            case 4 -> carta="5";
+            case 5 -> carta="6";
+            case 6 -> carta="7";
+            case 7 -> carta="8";
+            case 8 -> carta="9";
+            case 9 -> carta="10";
+            case 10 -> carta="J";
+            case 11 -> carta="Q";
+            case 12 -> carta="K";
         };
-        System.out.printf("");
+        System.out.printf("%s de %s", carta, palo);
     }
 }

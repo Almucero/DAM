@@ -1,28 +1,46 @@
 package Ejercicio62;
 
-import java.util.Scanner;
-
 public class Ejercicio62 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca un número: ");
-        int numero = scanner.nextInt();
-        
-        boolean afortunado = true;
-        while (numero > 0) {
-            int digito = numero % 10;
-            if (digito != 3 && digito != 0 && digito != 1 && digito != 2 && digito != 4 && digito != 5 && digito != 6) {
-                afortunado = false;
+        int num=0;
+        int numAfortunados=0;
+        int numDesafortunados=0;
+        while (true) {
+            try {
+                while (true) {
+                    try {
+                        System.out.print("Introduzca un número: ");
+                        num = Integer.parseInt(System.console().readLine());
+                        break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Error. Debe introducir un valor válido: "+e);
+                        System.out.println();
+                    }
+                }
+                int temp=num;
+                while (temp!=0) {
+                    int digito = temp%10;
+                    if (digito==3 || digito==7 || digito==8 || digito==9) {
+                        numAfortunados++;
+                    }
+                    else {
+                        numDesafortunados++;
+                    }
+                    temp = temp/10;
+                }
+                if (numAfortunados>numDesafortunados) {
+                    System.out.printf("El %d es un número afortunado", num);
+                }
+                else {
+                    System.out.printf("El %d no es un número afortunado", num);
+                }
                 break;
             }
-            numero /= 10;
-        }
-        
-        if (afortunado) {
-            System.out.println("El número es afortunado.");
-        } else {
-            System.out.println("El número no es afortunado.");
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e);
+                break;
+            }
         }
     }
 }
