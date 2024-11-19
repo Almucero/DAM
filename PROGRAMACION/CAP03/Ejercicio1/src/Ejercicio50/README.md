@@ -4,22 +4,22 @@ Ejemplo 1:
 Introduzca la altura (5 como mínimo): 5
 Introduzca el número de espacios entre los números (1 como mínimo): 2
 
-* **** ****
-* *    *
-* **** ****
-*    *    *
-* **** ****
+*  ****  ****
+*  *     *
+*  ****  ****
+*     *     *
+*  ****  ****
 
 Ejemplo 2:
 Introduzca la altura (5 como mínimo): 7
 Introduzca el número de espacios entre los números (1 como mínimo): 3
-* **** ****
-* *    *
-* **** ****
-*    *    *
-*    *    *
-*    *    *
-* **** ****
+*   ****   ****
+*   *      *
+*   ****   ****
+*      *      *
+*      *      *
+*      *      *
+*   ****   ****
 
 Ejemplo 3:
 Introduzca la altura (5 como mínimo): 6 Introduzca el número de espacios entre los números (1 como

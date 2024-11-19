@@ -26,12 +26,10 @@ public class Ejercicio47 {
                 }
                 for (int fila=1; fila<=altura; fila++) {
                     if (fila==1 || fila==(altura/2)+1 || fila==altura) {
-                        System.out.print("MMMMMM");
-                        System.out.println();
+                        System.out.printf("MMMMMM%n");
                     }
                     else {
-                        System.out.print("M    M");
-                        System.out.println();
+                        System.out.printf("M    M%n");
                     }
                 }
                 cerrar=true;
