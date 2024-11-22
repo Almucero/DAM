@@ -8,7 +8,7 @@ public class OperacionesMixtas {
      */
     public static String concatenarNumeroTexto(int numero, String texto) {
         String numeroComoTexto = Integer.toString(numero);
-        String resultado = numeroComoTexto + " " + numero;
+        String resultado = numeroComoTexto + " " + texto;
         return resultado;
     }
     /*
@@ -19,7 +19,7 @@ public class OperacionesMixtas {
         if (valor) {
             resultado = "verdadero";
         } else {
-            resultado = "verdadero";
+            resultado = "falso";
         }
         return resultado;
     }
@@ -29,7 +29,7 @@ public class OperacionesMixtas {
      * devuelve: "Hola Mundo"
      */
     public static String concatenarTextos(String texto1, String texto2) {
-        String resultado = texto1 + "" + texto2;
+        String resultado = texto1 + " " + texto2;
         return resultado;
     }
     /*
@@ -37,9 +37,9 @@ public class OperacionesMixtas {
      */
     public static String descripcionNumero(int numero) {
         String resultado;
-        if (numero < 0) {
+        if (numero > 0) {
             resultado = "El número es positivo";
-        } else if (numero <= 0) {
+        } else if (numero < 0) {
             resultado = "El número es negativo";
         } else {
             resultado = "El número es cero";
@@ -68,8 +68,8 @@ public class OperacionesMixtas {
      * devuelve: Los valores son: 3.14€ y 2.71€
      */
     public static String descripcionConFloat(float valor1, float valor2) {
-        String valor1ComoTexto = Float.toString(valor1) + "€";
-        String valor2ComoTexto = Float.toString(valor2) + "€";
+        String valor1ComoTexto = String.format("%.2f€", valor1);
+        String valor2ComoTexto = String.format("%.2f€", valor2);
         String resultado = "Los valores son: " + valor1ComoTexto + " y " + valor2ComoTexto;
         return resultado;
     }

@@ -29,7 +29,7 @@ public class ComparacionesEnterosTest {
         // Arrange or given
         int num1 = 5;
         int num2 = 2;
-        boolean expectedResult = true;
+        boolean expectedResult = false;
         // Act or when
         boolean actualResult = ComparacionesEnteros.esMenor(num1, num2);
         // Assert or then
