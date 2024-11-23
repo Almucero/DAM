@@ -33,7 +33,7 @@ Introduzca el tamaño del array: 12
 *    *  ****  ****** *    *
 
 Ejemplo 4 (con altura 13):
-*    *  ****  *       ****
+*    *  ****  *       **** 
 *    * *    * *      *    *
 *    * *    * *      *    *
 *    * *    * *      *    *

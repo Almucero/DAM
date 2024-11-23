@@ -3,19 +3,19 @@ siempre de 4 espacios. Si la altura introducida por el usuario no es un número 
 
 Ejemplo 1:
 Por favor, introduzca la altura de la figura: 7
-* *
- * *
-  * *
-   * *
-  * *
- * *
-* *
+*    *
+ *    *
+  *    *
+   *    *
+  *     *
+ *    *
+*    *
 
 Ejemplo 2:
 Por favor, introduzca la altura de la figura: 3
-* *
- * *
-* *
+*    *
+ *    *
+*    *
 
 Ejemplo 3:
 Por favor, introduzca la altura de la figura: 4

@@ -1,68 +1,75 @@
 package Ejercicio64;
 
-import java.util.Scanner;
-
 public class Ejercicio64 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        int ancho = 6, alto = 3;
-        
-        System.out.println("******");
-        System.out.println("*    *");
-        System.out.println("******");
-        
-        boolean salir = false;
-        
-        while (!salir) {
-            System.out.println("1. Agrandarlo");
-            System.out.println("2. Achicarlo");
-            System.out.println("3. Cambiar la orientación");
-            System.out.println("4. Salir");
-            System.out.print("Indique qué quiere hacer con el rectángulo: ");
-            int opcion = scanner.nextInt();
-            
-            switch (opcion) {
-                case 1:
-                    ancho++;
-                    alto++;
-                    break;
-                case 2:
-                    if (ancho > 2 && alto > 2) {
-                        ancho--;
-                        alto--;
-                    } else {
-                        System.out.println("El rectángulo no se puede achicar más.");
-                    }
-                    break;
-                case 3:
-                    int temp = ancho;
-                    ancho = alto;
-                    alto = temp;
-                    break;
-                case 4:
-                    salir = true;
-                    break;
-                default:
-                    System.out.println("Opción incorrecta.");
-                    break;
-            }
-            
-            for (int i = 0; i < ancho; i++) {
-                System.out.print("*");
-            }
-            System.out.println();
-            for (int i = 0; i < alto - 2; i++) {
-                System.out.print("*");
-                for (int j = 0; j < ancho - 2; j++) {
-                    System.out.print(" ");
+    public static String numEspacios(int anchura) {
+        String espacios="";
+        for (int i=1; i<=anchura-2; i++) {
+            espacios = espacios+" ";
+        }
+        return espacios;
+    }
+    public static void pintarCuadrado(int altura, int anchura) {
+        for (int i=1; i<=altura; i++) {
+            if (i==1 || i==altura) {
+                for (int j=1; j<=anchura; j++) {
+                    System.out.print("*");
                 }
-                System.out.println("*");
+                System.out.println();
             }
-            for (int i = 0; i < ancho; i++) {
-                System.out.print("*");
+            else {
+                System.out.println("*"+numEspacios(anchura)+"*");
             }
-            System.out.println();
+        }
+    }
+    public static int menu() {
+        System.out.printf("1. Agrandarlo%n2. Achicarlo%n3. Cambiar la orientación%n4. Salir%n");
+        int eleccion;
+        while (true) {
+            try {
+                System.out.print("Indique que quiere hacer con el rectángulo: ");
+                eleccion = Integer.parseInt(System.console().readLine());
+                if (eleccion==1 || eleccion==2 || eleccion==3 || eleccion==4) {
+                    break;
+                }
+                else {
+                    System.out.println("Error. Debe introducir un valor válido\n");
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Error. Debe introducir un valor válido: "+e+"\n");
+            }
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e+"\n");
+            }
+        }
+        return eleccion;
+    }
+    public static void main(String[] args) {
+        int altura=3, anchura=6;
+        pintarCuadrado(3, 6);
+        while (true) {
+            int eleccion = menu();
+            switch (eleccion) {
+                case 1-> {
+                    altura += 1;
+                    anchura += 1;
+                    pintarCuadrado(altura, anchura);
+                }
+                case 2-> {
+                    altura -= 1;
+                    anchura -= 1;
+                    pintarCuadrado(altura, anchura);
+                }
+                case 3-> {
+                    int temp = altura;
+                    altura = anchura;
+                    anchura = temp;
+                    pintarCuadrado(altura+1, anchura-1);
+                }
+                case 4-> {
+                    return;
+                }
+            }
         }
     }
 }

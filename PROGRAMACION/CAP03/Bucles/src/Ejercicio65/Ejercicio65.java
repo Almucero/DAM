@@ -1,71 +1,79 @@
 package Ejercicio65;
 
-import java.util.Scanner;
-
 public class Ejercicio65 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca la altura de la A (un número mayor o igual a 3): ");
-        int altura = scanner.nextInt();
-        
-        if (altura < 3) {
-            System.out.println("La altura introducida no es correcta.");
-            return;
+    public static int solicitarAltura() {
+        int altura;
+        while (true) {
+            try {
+                System.out.print("Introduzca la altura de la A (un número mayor o igual a 3): ");
+                altura = Integer.parseInt(System.console().readLine());
+                if (altura>=3) {
+                    break;
+                }
+                else {
+                    System.out.print("Error. Debe introducir una altura mayor o igual a 3\n");
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Error. Debe introducir un valor válido: "+e+"\n");
+            }
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e+"\n");
+            }
         }
-        
-        System.out.print("Introduzca la fila del palito horizontal (entre 2 y " + (altura - 1) + "): ");
-        int fila = scanner.nextInt();
-        
-        if (fila < 2 || fila >= altura) {
-            System.out.println("La fila introducida no es correcta.");
-            return;
+        return altura;
+    }
+    public static int solicitarPalito(int altura) {
+        int alturaPalito;
+        while (true) {
+            try {
+                System.out.printf("Introduzca la fila del palito horizontal (entre 2 y %d): ", altura);
+                alturaPalito = Integer.parseInt(System.console().readLine());
+                System.err.println();
+                if (alturaPalito>=2 && alturaPalito<=altura) {
+                    break;
+                }
+                else {
+                    System.out.printf("Error. La fila del palito debe estar entre 2 y %d%n", altura);
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Error. Debe introducir un valor válido: "+e+"\n");
+            }
+            catch (Exception e) {
+                System.out.println("Ocurrió un error inesperado: "+e+"\n");
+            }
         }
-        
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < altura - i - 1; j++) {
+        return alturaPalito;
+    }
+    public static void piramideHueca(int altura, int alturaPalito) {
+        for (int fila=1; fila<=altura; fila++) {
+            for (int espaciosIzquierda=1; espaciosIzquierda<=(altura-fila); espaciosIzquierda++) {
                 System.out.print(" ");
             }
             System.out.print("*");
-            if (i > 0 && i < altura - 1) {
-                for (int j = 0; j < 2 * i - 1; j++) {
+            for (int espaciosInternos=1; espaciosInternos<=(2*fila-3); espaciosInternos++) {
+                if (fila==alturaPalito) {
+                    System.out.print("*");
+                }
+                else {
                     System.out.print(" ");
                 }
+            }
+            if (fila>1) {
                 System.out.print("*");
             }
-            if (i == fila - 1) {
-                for (int j = 0; j < (2 * i + 1); j++) {
-                    System.out.print("*");
-                }
-            }
             System.out.println();
         }
     }
-}
-/*package Ejercicio57;
-
-import java.util.Scanner;
-
-public class Ejercicio57 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Introduzca la altura de la figura: ");
-        int altura = scanner.nextInt();
-        
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < altura - i - 1; j++) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < 1 + 2 * i; j++) {
-                if (j == 0 || j == 2 * i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
+        try {
+            int altura = solicitarAltura();
+            int alturaPalito = solicitarPalito(altura);
+            piramideHueca(altura, alturaPalito);
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error inesperado: "+e);
         }
     }
 }
- */
