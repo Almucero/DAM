@@ -1,6 +1,10 @@
 package Ejercicio2;
 
 public class Ejercicio2 {
+    public static String a() {
+        String b="\033[31m";
+        return b;
+    }
     public static void main(String[] args) throws Exception {
         try {
         System.out.println("\033[1m"+"VOLUMEN DE UN CONO"+"\033[0m");
@@ -13,7 +17,7 @@ public class Ejercicio2 {
         final double pi = 3.14159;
         double V = pi*r*r*h/3;
 
-        System.out.printf("El volumen del cono es: "+"\033[31m"+"%.2f"+"\033[0m"+" cm3%n", V);
+        System.out.printf("El volumen del cono es: "+a()+"%.2f"+"\033[0m"+" cm3%n", V);
         }
         catch (NumberFormatException e) {
             System.out.println("Por favor, introduzca el valor adecuado");
