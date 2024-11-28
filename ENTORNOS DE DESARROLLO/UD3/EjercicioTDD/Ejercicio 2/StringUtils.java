@@ -5,7 +5,7 @@ public class StringUtils {
         for (int i=palabra.length()-1; i>=0; i--) {
             reverseString = reverseString+palabra.charAt(i);
         }
-        if (palabra==reverseString) {
+        if (palabra.equalsIgnoreCase(reverseString)) {
             return true;
         }
         else {

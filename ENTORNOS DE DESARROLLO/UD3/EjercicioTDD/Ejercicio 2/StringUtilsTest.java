@@ -5,7 +5,7 @@ public class StringUtilsTest {
     @Test
     public void testReverseWord() {
         //arrange
-        String palabra="amigo";
+        String palabra="reconocer";
         boolean resultadoEsperado=true;
 
         //act
