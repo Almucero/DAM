@@ -1,15 +1,14 @@
 public class StringUtils {
-    //crear la firma
-    public static boolean reverseWord(String palabra) {
-        String reverseString="";
+    public static boolean palindromo(String palabra) {
+        String palindromo="";
         for (int i=palabra.length()-1; i>=0; i--) {
-            reverseString = reverseString+palabra.charAt(i);
+            palindromo = palindromo+palabra.charAt(i);
         }
-        if (palabra.equalsIgnoreCase(reverseString)) {
+        if (palabra.equalsIgnoreCase(palindromo)) {
             return true;
         }
         else {
             return false;
-        }        
+        }
     }
 }

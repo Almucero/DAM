@@ -3,37 +3,37 @@ import org.junit.Test;
 
 public class StringUtilsTest {
     @Test
-    public void palindromo_reconocer() {
+    public void testEsSoloMayusculas_CARAMBANO() {
         //arrange
-        String palabra="reconocer";
+        String palabra="CARAMBANO";
         boolean resultadoEsperado=true;
 
         //act
-        boolean resultadoReal = StringUtils.palindromo(palabra);
+        boolean resultadoReal = StringUtils.esSoloMayusculas(palabra);
         
         //assert
         Assert.assertEquals(resultadoEsperado, resultadoReal);
     }
     @Test
-    public void palindromo_meteorito() {
+    public void testEsSoloMayusculas_Payaso() {
         //arrange
-        String palabra="meteorito";
+        String palabra="Payaso";
         boolean resultadoEsperado=false;
 
         //act
-        boolean resultadoReal = StringUtils.palindromo(palabra);
+        boolean resultadoReal = StringUtils.esSoloMayusculas(palabra);
         
         //assert
         Assert.assertEquals(resultadoEsperado, resultadoReal);
     }
     @Test
-    public void palindromo_oso() {
+    public void testEsSoloMayusculas_ANTIdoto() {
         //arrange
-        String palabra="oso";
-        boolean resultadoEsperado=true;
+        String palabra="ANTIdoto";
+        boolean resultadoEsperado=false;
 
         //act
-        boolean resultadoReal = StringUtils.palindromo(palabra);
+        boolean resultadoReal = StringUtils.esSoloMayusculas(palabra);
         
         //assert
         Assert.assertEquals(resultadoEsperado, resultadoReal);
