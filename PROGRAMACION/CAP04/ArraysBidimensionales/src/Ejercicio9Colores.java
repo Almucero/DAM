@@ -1,5 +1,7 @@
-public class Ejercicio9 {
+public class Ejercicio9Colores {
+    
     public static void main(String[] args) {
+        boolean perro=false;
         final int TAMANIO = 24;
         
         // Crear y rellenar la matriz original
@@ -19,7 +21,7 @@ public class Ejercicio9 {
             // Mostrar matriz actual
             System.out.println("Array original:");
             System.out.println("---------------");
-            mostrarMatriz(matriz);
+            mostrarMatriz(matriz, perro);
             
             // Crear matriz para el resultado
             int[][] resultado = new int[TAMANIO][TAMANIO];
@@ -70,13 +72,25 @@ public class Ejercicio9 {
             matriz = resultado;
         }
     }
+    public static final String RESET = "\033[0m" ;
+    public static final String RED_BACKGROUND = "\033[41m";
+    public static final String GREEN_BACKGROUND = "\033[42m";
+    public static final String BLUE_BACKGROUND = "\033[44m";
+    public static final String PURPLE_BACKGROUND = "\033[45m";
     
-    private static void mostrarMatriz(int[][] matriz) {
+    private static void mostrarMatriz(int[][] matriz, boolean perro) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
-                System.out.printf("%3d ", matriz[i][j]);
+                if (perro&&(j+i)%2==0) {
+                    System.out.printf("%s", RED_BACKGROUND+"   "+RESET);
+                    perro=false;
+                }
+                else {
+                    System.out.printf("%s", GREEN_BACKGROUND+"   "+RESET);
+                    perro=true;
+                }
             }
             System.out.println();
         }
     }
-} 
+}

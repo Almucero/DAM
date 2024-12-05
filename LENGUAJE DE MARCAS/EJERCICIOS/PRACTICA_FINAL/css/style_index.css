@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    font-size: 50pt;
+    text-shadow: 2px 2px yellow;
+    font-family: icelandwinterstorm;
+}
+@font-face {
+    font-family: shred_handed;
+    src: url(../fonts/Shred\ Handed.otf) format('truetype');
+}
+@font-face {
+font-family: icelandwinterstorm;
+src: url(../fonts/IcelandWinterstorm.otf) format('truetype');
+}

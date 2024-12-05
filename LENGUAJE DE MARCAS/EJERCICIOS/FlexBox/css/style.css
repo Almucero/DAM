@@ -22,7 +22,7 @@ body {
     /* Comentamos la línea de la altura de los items, y añadimos altura al flex-container */
     height: 600px;
 
-    */ Alinear verticalmente los items */
+    /* Alinear verticalmente los items */
     align-items: stretch;
 }
 .caja {
