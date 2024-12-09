@@ -98,7 +98,7 @@ src: url(../fonts/IcelandWinterstorm.otf) format('truetype');
     justify-content: flex-start;
 }
 .footer {
-    background-image: url(/imagenes/gifdragon.gif);
+    background-image: url(imagenes/gifdragon.gif);
     height: 200px;
     background-size: contain;
     background-position: center;
