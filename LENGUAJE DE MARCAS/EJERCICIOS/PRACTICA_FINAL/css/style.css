@@ -23,7 +23,6 @@ src: url('../fonts/IcelandWinterstorm.otf') format('truetype');
 }
 .header {
     position: relative;
-    background-image: url('../imagenes/imagen1.png');
     background-size: cover;
     background-position: center;
     height: 16rem;
@@ -98,7 +97,6 @@ src: url('../fonts/IcelandWinterstorm.otf') format('truetype');
     justify-content: flex-start;
 }
 .footer {
-    background-image: url('../imagenes/gifdragon.gif');
     height: 200px;
     background-size: contain;
     background-position: center;
