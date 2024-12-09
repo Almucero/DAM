@@ -1,10 +1,10 @@
 @font-face {
     font-family: shred_handed;
-    src: url(../fonts/Shred\ Handed.otf) format('truetype');
+    src: url('../fonts/Shred\ Handed.otf') format('truetype');
 }
 @font-face {
 font-family: icelandwinterstorm;
-src: url(../fonts/IcelandWinterstorm.otf) format('truetype');
+src: url('../fonts/IcelandWinterstorm.otf') format('truetype');
 }
 * {
     margin: 0px;
@@ -58,7 +58,7 @@ src: url(../fonts/IcelandWinterstorm.otf) format('truetype');
     flex-direction: column;
 }
 .footer {
-    background-image: url(imagenes/gifdragon.gif);
+    background-image: url('..imagenes/gifdragon.gif');
     height: 200px;
     background-size: contain;
     background-position: center;
