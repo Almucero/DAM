@@ -1,0 +1,58 @@
+#indice {
+    line-height: 1.5;
+    color: gre
+}
+#indice a {
+    text-decoration: none;
+    color: green;
+}
+#indice a:hover {
+    text-decoration: none;
+    color: purple;
+}
+#indice a:active {
+    text-decoration: none;
+    color: red;
+}
+#indice ul ul > li a {
+    color: rgb(174, 0, 255);
+}
+#indice ul ul > li a:hover {
+    color: rgb(255, 0, 102);
+}
+#indice ul ul > li a:active {
+    color: rgb(103, 13, 49);
+}
+p {
+    color: aqua;
+}
+.titulo {
+    color: red;
+    text-align: center;
+}
+#cuerpo1 {
+    background-color: rgba(34, 159, 149, 0.541);
+}
+#cuerpo2 {
+    background-color: rgba(10, 174, 89, 0.461);
+}
+#cuerpo3 {
+    background-color: rgba(99, 7, 103, 0.541);
+}
+.cuerpo a {
+    text-decoration: none;
+}
+.cuerpo a:hover {
+    color: purple;
+}
+.cuerpo a:visited {
+    color: blue;
+}
+.cuerpo a:active {
+    color: red;
+}
+.portada {
+    width: 40rem;
+    border: 5px solid white;
+    border-radius: 10px;
+}

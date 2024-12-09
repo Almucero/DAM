@@ -1,0 +1,141 @@
+@font-face {
+    font-family: shred_handed;
+    src: url(../fonts/Shred\ Handed.otf) format('truetype');
+}
+@font-face {
+font-family: icelandwinterstorm;
+src: url(../fonts/IcelandWinterstorm.otf) format('truetype');
+}
+* {
+    margin: 0px;
+}
+.texto_titulo {
+    font-size: 90pt;
+    font-weight: bold;
+    text-shadow: 2px 2px yellow;
+    font-family: icelandwinterstorm;
+}
+.texto_subtitulo {
+    font-size: 40pt;
+    font-weight: bold;
+    text-shadow: 2px 2px orange;
+    font-family: shred_handed;
+}
+.header {
+    position: relative;
+    background-image: url(/imagenes/imagen1.png);
+    background-size: cover;
+    background-position: center;
+    height: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 34, 14, 0.5);
+}
+.texto_header {
+    position: relative;
+}
+.barra_navegacion {
+    font-size: 30pt;
+    font-family: shred_handed;
+    text-shadow: 1px 1px black;
+    font-weight: bold;
+    text-align: center;
+}
+.barra_navegacion td {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.barra_navegacion a {
+    color: white;
+    text-decoration: none;
+}
+.barra_navegacion a:hover {
+    color: rgb(30, 158, 36);
+}
+.pagina_activa {
+    background-color: crimson;
+}
+.pagina_inactiva {
+    background-color: rgb(222, 222, 32);
+}
+.hr_amarillo {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    height: 0.5rem;
+    background: linear-gradient(to bottom, black 0%, yellow 50%, black 100%);
+}
+.hr_verde {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    height: 0.5rem;
+    background: linear-gradient(to bottom, black 0%, green 50%, black 100%);
+}
+.cuerpo {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30pt;
+    text-shadow: 2px 2px black;
+    font-family: shred_handed;
+    margin: 3rem;
+    background-color: rgba(30, 255, 0, 0.466);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    padding: 25px;
+    width: calc(100vw - 10rem);
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.footer {
+    background-image: url(/imagenes/gifdragon.gif);
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+}
+.contenedor_informacion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    margin-right: 2rem;
+}
+.informacion {
+    height: 100px;
+    width: 300px;
+    background-color: rgba(255, 255, 0, 0.815);
+    border: 5px solid green;
+    border-radius: 15px;
+    display: inline-block;
+    line-height: 100px;
+    text-align: center;
+    padding: 5px;
+    font-family:'Times New Roman', Times, serif;
+    color: red;
+    text-shadow: 1px 1px black;
+}
+.informacion a:hover {
+    color: greenyellow;
+}
+.informacion a:visited {
+    color: purple;
+}
+.informacion a:active {
+    color: red;
+}
+.vacio {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+}

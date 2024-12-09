@@ -1,0 +1,37 @@
+h1 {
+    font-size: 35pt;
+    color: rgb(255, 0, 0);
+    font-weight: 100;
+    text-shadow: 1px 1px white;
+    text-align: center;
+}
+form {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: none;
+    color: black;
+    background-color:rgba(255, 99, 71, 0.932);
+    font-size: 20pt;
+    border: none;
+    width: 600px;
+    margin: auto;
+    text-align: justify;
+    line-height: 2.5rem;
+}
+input {
+    margin-bottom: 5px;
+}
+legend {
+    color: darkgoldenrod;
+    text-shadow: 1px 1px black;
+    font-weight: bold;
+    text-align: center;
+}
+textarea {
+    width: 340px;
+    height: 20px;
+    vertical-align: middle;
+}
+input::placeholder {
+    font-size: 8pt;
+    font-style: italic;
+}

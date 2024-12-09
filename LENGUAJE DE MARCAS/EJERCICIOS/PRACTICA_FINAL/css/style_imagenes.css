@@ -1,0 +1,58 @@
+img[src="/imagenes/imagen2.png"] {
+    border: 5px solid red;
+    border-radius: 25px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    width: 20.25rem;
+    height: 24.375rem;
+}
+img[src="/imagenes/imagen9.webp"] {
+    border: 5px solid blue;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    width: 15rem;
+    height: 10rem;
+    opacity: 0.8;
+}
+img[src="/imagenes/imagen3.png"], img[src="/imagenes/imagen4.png"] {
+    border: 5px solid black;
+    border-radius: 25px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    width: 35rem;
+    height: 34rem;
+}
+img[src="/imagenes/imagen10.webp"], img[src="/imagenes/imagen11.webp"] {
+    border: 5px solid purple;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    width: 10rem;
+    height: 10rem;
+}
+img[src="/imagenes/imagen5.png"], img[src="/imagenes/imagen6.png"], img[src="/imagenes/imagen7.png"] {
+    border: 5px solid cyan;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: 25rem;
+}
+img[src="/imagenes/bitmap.png"], img[src="/imagenes/bondman.png"], img[src="/imagenes/la mítica.png"] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+img[src="/imagenes/shaolingo pose.png"] {
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    width: 45rem;
+    height: 30rem;
+}
+img[src="/imagenes/arroz3.jpg"], img[src="/imagenes/dumplings.jpg"], img[src="/imagenes/mariscos.jpg"], 
+img[src="/imagenes/pollo al limon.jpg"], img[src="/imagenes/variado.jpg"] {
+    width: 60rem;
+    height: 30rem;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
