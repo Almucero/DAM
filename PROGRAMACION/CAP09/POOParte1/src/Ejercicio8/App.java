@@ -1,6 +1,7 @@
-public class App {
+package Ejercicio8;
 
-    public static void main(String[] args) throws Exception {
+public class App {
+    public static void main(String[] args) {
         Terminal t1 = new Terminal("678 11 22 33");
         Terminal t2 = new Terminal("644 74 44 69");
         Terminal t3 = new Terminal("622 32 89 09");
