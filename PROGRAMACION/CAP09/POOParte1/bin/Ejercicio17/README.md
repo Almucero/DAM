@@ -11,9 +11,9 @@ System.out.println("Pirámides creadas: " + Piramide.getPiramidesCreadas());
 System.out.println("Rectángulos creados: " + Rectangulo.getRectangulosCreados());
 
 Salida:
-*
-***
-*****
+   *
+  ***
+ *****
 *******
 ****
 ****
