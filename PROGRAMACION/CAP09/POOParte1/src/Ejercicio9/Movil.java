@@ -16,7 +16,7 @@ public class Movil extends Terminal {
         double minutos = (double)segundos/60;
 
         switch(this.tarifa) {
-            case "rata"-> this.tarificado+=minutos*0.6;
+            case "rata"-> this.tarificado+=minutos*0.06;
             case "mono"-> this.tarificado+=minutos*0.12;
             case "bisonte"-> this.tarificado+=minutos*0.30;
         };
