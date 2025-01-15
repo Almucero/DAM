@@ -4,12 +4,14 @@ public class Cuenta {
     private float saldo;
 
     public float depositar(float dinero) {
-        return 0;
+        saldo += dinero;
+        return saldo;
     }
     public float retirar(float dinero) {
-        return 0;
+        saldo -= dinero;
+        return saldo;
     }
     public float consultarSaldo() {
-        return 0;
+        return saldo;
     }
 }
