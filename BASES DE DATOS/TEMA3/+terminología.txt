@@ -1,0 +1,7 @@
++terminología
++condiciones-> saber que una tabla es un conjunto.
++definición base de datos relacional
++normalización -> formas normales hasta abajo
++dependencias->entenderlas
++formas normales->definiciones
+
