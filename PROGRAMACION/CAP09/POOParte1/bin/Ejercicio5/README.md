@@ -19,6 +19,7 @@ public class PedidosPizza {
 Salida:
 pizza margarita mediana, pedida
 pizza funghi familiar, servida
-pizza cuatro quesos mediana, pedida esa pizza ya se ha servido
+pizza cuatro quesos mediana, pedida 
+esa pizza ya se ha servido
 pedidas: 3
 servidas: 1
