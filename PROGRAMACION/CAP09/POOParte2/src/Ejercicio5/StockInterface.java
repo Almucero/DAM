@@ -3,6 +3,14 @@ package Ejercicio5;
 import Ejercicio5.Excepciones.*;
 
 public interface StockInterface {
+
+    /**
+     * Devuelve un articulo dado el código
+     * @param codigo Código del artículo
+     * @return El artículo solicitado
+     * @throws ArticuloNoExisteException Si no exsite el artículo
+     */
+    public Articulo obtenerArticulo(String codigo) throws ArticuloNoExisteException;
     /**
      * Añade un nuevo artículo al almacen
      * @param a Articulo a añadir
@@ -18,7 +26,7 @@ public interface StockInterface {
      * @return El Artículo antes de modificarlo
      * @throws ArticuloNoExisteException Si no existe el artículo en el almacen
      */
-    public Articulo modificaArticulo(Articulo a) throws ArticuloNoExisteException;
+    public Articulo modificaArticulo(String codigo, Articulo a) throws ArticuloNoExisteException;
 
     /**
      * Elimina un artículo del almacen

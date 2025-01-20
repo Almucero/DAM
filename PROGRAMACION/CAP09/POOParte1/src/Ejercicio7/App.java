@@ -21,13 +21,13 @@ public class App {
                 opcion = Integer.parseInt(System.console().readLine());
                 switch (opcion) {
                     case 1:
-                        System.out.println("En la zona principal hay "+principal.getEntradasPorVender());
+                        System.out.println("\nEn la zona principal hay "+principal.getEntradasPorVender());
                         System.out.println("En la zona de compra venta hay "+compraVenta.getEntradasPorVender());
                         System.out.println("En la zona vip hay "+vip.getEntradasPorVender());
                         break;
                     case 2:
                         System.out.print("""
-                            1. Principal
+                            \n1. Principal
                             2. Compra-venta
                             3. Vip
                             """);

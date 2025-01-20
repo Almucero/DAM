@@ -6,31 +6,38 @@ Gato no 1
 Nombre: Bartolo
 Color: negro
 Raza: egipcio
+
 Gato no 2
 Nombre: Nieves
 Color: blanco
 Raza: persa
+
 Gato no 3
 Nombre: Sur
 Color: amarillo
 Raza: bengala
+
 Gato no 4
 Nombre: Pepa
 Color: gris
 Raza: siberiano
+
 Datos de los gatos:
 Gato no1
 Nombre: Bartolo
 Color: negro
 Raza: egipcio
+
 Gato no2
 Nombre: Nieves
 Color: blanco
 Raza: persa
+
 Gato no3
 Nombre: Sur
 Color: amarillo
 Raza: bengala
+
 Gato no4
 Nombre: Pepa
 Color: gris

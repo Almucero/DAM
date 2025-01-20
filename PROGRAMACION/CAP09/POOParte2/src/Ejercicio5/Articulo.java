@@ -47,12 +47,14 @@ public class Articulo {
     public String getDescripcion() {
         return descripcion;
     }
+
     public double getPrecioCompra() {
         return precioCompra;
     }
     public double getPrecioVenta() {
         return precioVenta;
     }
+
     public int getStock() {
         return stock;
     }
@@ -65,12 +67,12 @@ public class Articulo {
     @Override
     public String toString() {
         return String.format("""
-                ------------------------------------------
-                Código: %s
-                Descripción: %s
-                Precio de compra: %.2f
-                Precio de venta: %.2f
-                Stock: %d unidades
-                """,codigo, descripcion, precioCompra, precioVenta, stock);
+            ------------------------------------------
+            Código: %s
+            Descripción: %s
+            Precio de compra: %.2f
+            Precio de venta: %.2f
+            Stock: %d unidades
+            """,codigo, descripcion, precioCompra, precioVenta, stock);
     }
 }
