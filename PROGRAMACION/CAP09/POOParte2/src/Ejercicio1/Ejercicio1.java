@@ -1,9 +1,8 @@
 package Ejercicio1;
 
 public class Ejercicio1 {
+    private static Gato[] gato = new Gato[4];
     public static void main(String[] args) {
-        Gato[] gato = new Gato[4];
-
         System.out.println("Por favor introduzca los datos de los gatos: ");
         for (int i=0; i<4; i++) {
             System.out.println("Gato no"+(i+1));

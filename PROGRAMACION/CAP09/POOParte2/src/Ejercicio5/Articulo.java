@@ -24,7 +24,7 @@ public class Articulo {
         char maxLetra = 'Z';
         char minNumero = '0';
         char maxNumero = '9';
-        for(int i = 1; i<=longitud; i++){
+        for(int i=1; i<=longitud; i++){
             if(Math.random()>0.5)
                 codigo+=(char)(Math.random()*(maxLetra - minLetra - 1) + minLetra);
             else
@@ -73,6 +73,6 @@ public class Articulo {
             Precio de compra: %.2f
             Precio de venta: %.2f
             Stock: %d unidades
-            """,codigo, descripcion, precioCompra, precioVenta, stock);
+            """, codigo, descripcion, precioCompra, precioVenta, stock);
     }
 }

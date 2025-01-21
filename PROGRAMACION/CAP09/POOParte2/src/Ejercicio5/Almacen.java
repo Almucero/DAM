@@ -2,7 +2,7 @@ package Ejercicio5;
 
 import Ejercicio5.Excepciones.*;
 
-public class Almacen implements StockInterface{
+public class Almacen implements StockInterface {
     Articulo[] stockArticulos;
     int stock;
 
@@ -79,7 +79,7 @@ public class Almacen implements StockInterface{
                 return String.format("%s", stockArticulos[i]);
             }
         }
-        return null;
+        return "";
     }
 
     @Override
