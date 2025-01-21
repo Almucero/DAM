@@ -12,11 +12,11 @@ import Ejercicio5.Excepciones.*;
  * stock (cantidad de artículo en el almacen)
  */
 public class Articulo {
-    String codigo;
-    String descripcion;
-    double precioCompra;
-    double precioVenta;
-    int stock;
+    private String codigo;
+    private String descripcion;
+    private double precioCompra;
+    private double precioVenta;
+    private int stock;
 
     private static String obtenerNuevoCodigo(int longitud){
         String codigo = "";

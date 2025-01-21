@@ -5,84 +5,62 @@ import Ejercicio5.Excepciones.*;
 public class Almacen implements StockInterface{
     Articulo[] stockArticulos;
     int stock;
-    
-    public Almacen(int articulos){
+
+    public Almacen(int articulos) {
         stockArticulos = new Articulo[articulos];
-        stock = 0; 
+        stock=0;
     }
 
-    @Override
-    public boolean existe(String codigo) {
-        for(Articulo a:stockArticulos){
-            if(a!=null && a.getCodigo().equals(codigo))
-                return true;
-        }
-        return false;
-    }
-
-    private int encontrarHuecoLibre(){
-        int posicion = -1;
-        int contador = 0;
-        while(posicion == -1 && contador < stockArticulos.length){
-            if(stockArticulos[contador]==null){
-                posicion = contador;
+    private int encontrarHuecoLibre() throws EspacioInsuficienteException {
+        for (int i=0; i<stockArticulos.length; i++) {
+            if (stockArticulos[i]==null) {
+                return i;
             }
-            contador++;
         }
-        return posicion;
+        throw new EspacioInsuficienteException();
     }
 
-    private int encontrarArticulo(String codigo){
-        int posicion = -1;
-        int contador = 0;
-        while(posicion == -1 && contador < stockArticulos.length){
-            if(stockArticulos[contador]!=null && 
-               stockArticulos[contador].getCodigo().equals(codigo)){
-                posicion = contador;
+    //se intenta encontrar el articulo dentro del array de articulos, 
+    //en caso de no encontrarse devuelve una excepcion diciendo que no existe
+    private int encontrarArticulo(String codigo) throws ArticuloNoExisteException {
+        for (int i=0; i<stockArticulos.length; i++) {
+            if (stockArticulos[i]!=null && (stockArticulos[i].getCodigo()).equals(codigo)) {
+                return i;
             }
-            contador++;
         }
-        return posicion;
+        throw new ArticuloNoExisteException();
     }
 
     @Override
     public String nuevoArticulo(Articulo a) throws ArticuloYaExisteException, EspacioInsuficienteException {
-        int indice = encontrarArticulo(a.getCodigo());
-        if(indice!=-1)
+        try {
+            encontrarArticulo(a.getCodigo());
             throw new ArticuloYaExisteException();
-        indice = encontrarHuecoLibre();
-        if(indice==-1)
-            throw new EspacioInsuficienteException();
-        
-        stockArticulos[indice] = a;
-        return a.codigo;
+        }
+        catch (ArticuloNoExisteException e) {
+            int indice = encontrarHuecoLibre();
+            stockArticulos[indice]= a;
+            return a.getCodigo();
+        }
     }
 
     @Override
     public Articulo modificaArticulo(String codigo, Articulo a) throws ArticuloNoExisteException {
         int indice = encontrarArticulo(codigo);
-        if(indice==-1)
-            throw new ArticuloNoExisteException();
-        Articulo anterior = stockArticulos[indice];
         stockArticulos[indice] = a;
-        return anterior;
+        return stockArticulos[indice];
     }
 
     @Override
     public Articulo bajaArticulo(String codigo) throws ArticuloNoExisteException {
         int indice = encontrarArticulo(codigo);
-        if(indice==-1)
-            throw new ArticuloNoExisteException();
-        Articulo a = stockArticulos[indice];
         stockArticulos[indice] = null;
-        return a;
+        return stockArticulos[indice];
     }
 
     @Override
     public int entrada(String codigo, int cantidad) throws ArticuloNoExisteException, StockException{
         int indice = encontrarArticulo(codigo);
-        if(indice==-1)
-            throw new ArticuloNoExisteException();
         stockArticulos[indice].setStock(stockArticulos[indice].getStock()+cantidad);
         return stockArticulos[indice].getStock();
     }
@@ -90,28 +68,23 @@ public class Almacen implements StockInterface{
     @Override
     public int salida(String codigo, int cantidad) throws ArticuloNoExisteException, StockException {
         int indice = encontrarArticulo(codigo);
-        if(indice==-1)
-            throw new ArticuloNoExisteException();
         stockArticulos[indice].setStock(stockArticulos[indice].getStock()-cantidad);
         return stockArticulos[indice].getStock();
     }
 
     @Override
     public String toString() {
-        String res = "";
-        for(Articulo a:stockArticulos){
-            if(a!=null)
-                res += a.toString();
+        for (int i=0; i<stockArticulos.length; i++) {
+            if (stockArticulos[i]!=null) {
+                return String.format("%s", stockArticulos[i]);
+            }
         }
-        return res;
+        return null;
     }
 
     @Override
     public Articulo obtenerArticulo(String codigo) throws ArticuloNoExisteException {
-        
         int indice = encontrarArticulo(codigo);
-        if(indice==-1)
-            throw new ArticuloNoExisteException();
         return stockArticulos[indice];
     }
 }

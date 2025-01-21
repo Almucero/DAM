@@ -141,7 +141,7 @@ public class Ejercicio5 {
     }
 
     public static void main(String[] args) {
-        int opcion = -1;
+        int opcion;
         do {
             menu();
             opcion = Integer.parseInt(System.console().readLine());    
@@ -169,6 +169,6 @@ public class Ejercicio5 {
                 default:
                     System.out.println("Opción incorrecta");
             }
-        } while (opcion != 7);
+        } while (opcion!=7);
     }
 }

@@ -55,11 +55,4 @@ public interface StockInterface {
      * @throws StockException Si el stock es inválido
      */
     public int salida(String codigo, int cantidad) throws ArticuloNoExisteException, StockException;
-
-    /**
-     * Devuelve si existe el artículo en el almacen
-     * @param codigo Código del artículo a buscar
-     * @return true si existe, false si no.
-     */
-    public boolean existe(String codigo);
 }
