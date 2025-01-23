@@ -3,6 +3,13 @@ public class Curso {
     private int codigoCurso;
     Estudiante[] estudiantes;
 
+    public String getNombreCurso() {
+        return nombreCurso;
+    }
+    public void setNombreCurso(String nombreCurso) {
+        this.nombreCurso = nombreCurso;
+    }
+
     public void mostrarInformacion() {
         System.out.println("El curso es: "+nombreCurso);
     }
