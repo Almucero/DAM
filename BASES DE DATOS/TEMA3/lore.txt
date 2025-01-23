@@ -1,1 +1,0 @@
-una tabla o el resultado de una consulta es un conjunto donde cada elemento del conjunto es una fila completa de esa tabla
