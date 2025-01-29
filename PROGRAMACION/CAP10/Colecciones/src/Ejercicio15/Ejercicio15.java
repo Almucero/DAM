@@ -48,10 +48,6 @@ public class Ejercicio15 {
         System.out.println("--------\t------\t--------\t--------");
         double total = 0;
         double descontado = 0;
-        boolean hayDescuento = false;
-        if (codDescuento.equals("ECODTO")) {
-            hayDescuento = true;
-        }
         for(Pedido pedido:compra){
             double subtotal = productos.get(pedido.getProducto())*pedido.getCantidad();
             System.out.printf("%-8s\t%.2f\t%d\t%.2f%n", 
@@ -61,8 +57,8 @@ public class Ejercicio15 {
                 subtotal);
             total += subtotal;
         }
-        if (hayDescuento) {
-            descontado = total*(10/100);
+        if (codDescuento.equals("ECODTO")) {
+            descontado = total*(10.0/100.0);
             total = total-descontado;
         }
         System.out.println("--------\t------\t--------\t--------");

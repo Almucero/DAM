@@ -14,6 +14,5 @@ public class Pedido {
 
     public String getProducto() {
         return producto;
-    }
-    
+    }   
 }

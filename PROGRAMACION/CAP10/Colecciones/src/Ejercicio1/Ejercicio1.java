@@ -11,8 +11,22 @@ public class Ejercicio1 {
         personas.add("Julio Cesar");
         personas.add("Vladimir Putin");
 
+        //opción 1
         for (String gente:personas) {
             System.out.println(gente);
         }
-    } 
+
+        System.out.println();
+        //opción 2
+        for (int i=0; i<personas.size(); i++) {
+            String gente = personas.get(i);
+            System.out.println(gente);
+        }
+
+        System.out.println();
+        //opción 3
+        for (int i=0; i<personas.size(); i++) {
+            System.out.println(personas.get(i));
+        }
+    }
 }
