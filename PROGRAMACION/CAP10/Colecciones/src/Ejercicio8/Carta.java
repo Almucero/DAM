@@ -1,20 +1,48 @@
 package Ejercicio8;
 
 public class Carta {
-    private String numero;
+    private int numero;
+
+    public Carta(int numero) {
+        this.numero=numero;
+    }
+
+    public Carta(String numero, String palo) throws Exception{
+        int valorNumero = switch(numero.toLowerCase()){
+            case "uno"->0;
+            case "dos"->1;
+            case "tres"->2;
+            case "cuatro"->3;
+            case "cinco"->4;
+            case "seis"->5;
+            case "siete"->6;
+            case "sota"->7;
+            case "caballo"->8;
+            case "rey"->9;
+            default->throw new Exception("Carta inválida");
+        };
+        int valorPalo = switch(palo.toLowerCase()){
+            case "oros"->0;
+            case "copas"->1;
+            case "espadas"->2;
+            case "bastos"->3;
+            default->throw new Exception("Carta inválida");
+        };
+        this.numero = valorPalo*10+valorNumero;
+    }
     
-    public static String getPalo(int carta) {
-        return switch((int)carta/10) {
-            case 1->"oros";
-            case 2->"copas";
-            case 3->"espadas";
-            case 4->"bastos";
+    public static String getPalo(int carta){
+        return switch((int)((carta-1)/10)){
+            case 0->"oros";
+            case 1->"copas";
+            case 2->"espadas";
+            case 3->"bastos";
             default->"";
         };
     }
     
-    public static String getNumero(int carta) {
-        return switch((int)(carta-1)/10) {
+    public static String getNumero(int carta){
+        return switch((int)((carta-1)%10)){
             case 0->"uno";
             case 1->"dos";
             case 2->"tres";
