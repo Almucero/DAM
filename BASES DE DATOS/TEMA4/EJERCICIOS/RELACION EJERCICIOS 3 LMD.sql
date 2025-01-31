@@ -57,11 +57,8 @@ ORDER BY NOMEM ASC;
 
 SELECT NOMEM
 FROM temple
-WHERE NOMEM LIKE '%EZ%' AND 
-						SUBSTRING(NOMEM, ',', -1) LIKE '%O%' 
-						AND LEN(SUBSTRING(NOMEM, ',', -1))>=3
-ORDER BY NOMEM ASC;
-
+WHERE NOMEM LIKE '%EZ,%__O'
+ORDER BY NOMEM ASC;
 /*7.- Obtener, utilizando el predicado IN, por orden alfabético los nombres de los empleados del
       departamento 111 cuyo salario es igual a alguno de los salarios del departamento 112.
       ¿Cómo lo obtendrías con el predicado ANY?*/
@@ -102,12 +99,11 @@ ORDER BY NOMEM ASC;
 /*CON EXISTS*/
 
 SELECT NOMDE
-FROM tdepto
-WHERE NUMDE = EXISTS (SELECT NUMDE
-					  FROM temple
-					  WHERE COMIS IS NULL)
-ORDER BY NOMDE ASC;
-
+FROM tdepto D
+WHERE EXISTS (SELECT NUMDE
+		      FROM temple E
+			  WHERE E.NUMDE=D.NUMDE AND COMIS IS NULL)
+ORDER BY NOMDE ASC;
 /*CON ANY*/
 
 SELECT NOMDE
@@ -128,25 +124,24 @@ ORDER BY NOMDE ASC;
 
 /*CON JOIN*/
 
-SELECT NOMDE
+SELECT DISTINCT D.NOMDE
 FROM tdepto D JOIN temple E ON (D.NUMDE=E.NUMDE)
-WHERE COMIS IS NULL
-ORDER BY NOMDE ASC;
+WHERE E.COMIS IS NULL
+ORDER BY D.NOMDE ASC;
 
 /*10.- Para los departamentos cuyo nombre empieza por las letras O o P, mostrar el nombre del departamento y 
        el nombre del departamento del que depende.*/
 
-SELECT t1.NOMDE, t2.NOMDE
-FROM tdepto t1 JOIN tdepto t2 ON (t1.DEPDE=t2.NUMDE)
-WHERE t1.NOMDE LIKE 'O%' OR t1.NOMDE LIKE 'P%'
+SELECT D1.NOMDE, D2.NOMDE
+FROM tdepto D1 JOIN tdepto D2 ON (D1.DEPDE=D2.NUMDE)
+WHERE D1.NOMDE LIKE 'O%' OR D1.NOMDE LIKE 'P%'
 ORDER BY 1 ASC;
 
 /*11.- Para los departamentos del centro 20 obtener el nombre del departamento y el nombre del director.*/
 
-SELECT E.NOMDE, T.NOMEM
-FROM tdepto E
-JOIN temple T ON (E.NUMDE=T.NUMEM)
-WHERE E.NUMDE = 20
+SELECT D.NOMDE, E.NOMEM
+FROM tdepto D JOIN temple E ON (E.NUMEM=D.DIREC)
+WHERE D.NUMCE = 20
 
 /*12.- Obtener el nombre de los departamentos que no tienen empleados con menos de dos hijos.
        Realiza la consulta primero con un predicado ALL y después con un predicado EXISTS.*/
