@@ -1,48 +1,18 @@
 package Ejercicio8;
 
 public class Carta {
-    private int numero;
+    private String numero;
+    private String palo;
 
-    public Carta(int numero) {
-        this.numero=numero;
+    public String getPalo() {
+        return palo;
+    }
+    public String getNumero() {
+        return numero;
     }
 
-    public Carta(String numero, String palo) throws Exception{
-        int valorNumero = switch(numero.toLowerCase()){
-            case "uno"->0;
-            case "dos"->1;
-            case "tres"->2;
-            case "cuatro"->3;
-            case "cinco"->4;
-            case "seis"->5;
-            case "siete"->6;
-            case "sota"->7;
-            case "caballo"->8;
-            case "rey"->9;
-            default->throw new Exception("Carta inválida");
-        };
-        int valorPalo = switch(palo.toLowerCase()){
-            case "oros"->0;
-            case "copas"->1;
-            case "espadas"->2;
-            case "bastos"->3;
-            default->throw new Exception("Carta inválida");
-        };
-        this.numero = valorPalo*10+valorNumero;
-    }
-    
-    public static String getPalo(int carta){
-        return switch((int)((carta-1)/10)){
-            case 0->"oros";
-            case 1->"copas";
-            case 2->"espadas";
-            case 3->"bastos";
-            default->"";
-        };
-    }
-    
-    public static String getNumero(int carta){
-        return switch((int)((carta-1)%10)){
+    public Carta() {
+        this.numero = switch ((int)(Math.random()*10)) {
             case 0->"uno";
             case 1->"dos";
             case 2->"tres";
@@ -55,10 +25,17 @@ public class Carta {
             case 9->"rey";
             default->"";
         };
+        this.palo = switch ((int)(Math.random()*4)) {
+            case 0->"oros";
+            case 1->"copas";
+            case 2->"espadas";
+            case 3->"bastos";
+            default->"";
+        };
     }
 
     @Override
     public String toString() {
-        return String.format("%s de %s", getNumero(numero), getPalo(numero));
+        return String.format("%s de %s", this.numero, this.palo);
     }
 }

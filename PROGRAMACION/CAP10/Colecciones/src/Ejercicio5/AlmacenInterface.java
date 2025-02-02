@@ -3,10 +3,10 @@ package Ejercicio5;
 import Ejercicio5.Excepciones.*;
 
 public interface AlmacenInterface {
-    
-    public void crearDisco() throws DiscoYaExisteException;
 
-    public void modificarDsico(Disco disco) throws DiscoNoExisteException;
+    public Disco crearDisco(Disco d) throws DiscoYaExisteException;
 
-    public void borrarDisco(Disco disco) throws DiscoNoExisteException;
+    public void modificarDisco(String codigo, Disco disco) throws DiscoNoExisteException;
+
+    public void borrarDisco(String codigo) throws DiscoNoExisteException;
 }
