@@ -3,9 +3,7 @@ package Ejercicio23_Alter;
 public class Ejercicio23 {
     public static void main(String[] args) {
         String[] piezas = {"Dama", "Torre", "Alfil", "Caballo", "Peón"};
-        int[] valores = {9, 5, 3, 2, 1};
-        int[] maxVeces = {1, 2, 2, 2, 8};
-        int[] numveces = {0, 0, 0, 0, 0};
+        int[] valores = {9, 5, 3, 2, 1}, maxVeces = {1, 2, 2, 2, 8}, numveces = {0, 0, 0, 0, 0};
         int numCapturas=0, puntosTotales=0;
         do {
             int pieza = (int)(Math.random()*5);
