@@ -62,17 +62,36 @@ GROUP BY D.NOMDE, C.NOMCE
 HAVING MAX(E.SALAR)>1500
 ORDER BY 1 ASC;
 
-/*Hallar por orden alfabético los nombres de los departamentos que dependen de los que tienen un presupuesto inferior a 10000 euros. Mostrar el nombre del departamento y el nombre del departamento del que dependen. 
-  Realizar la consulta de cuatro formas distintas: con predicado IN, con predicado ANY, con producto cartesiano y con JOIN.*/
+/*Hallar por orden alfabético los nombres de los departamentos que dependen 
+de los que tienen un presupuesto inferior a 10000 euros. 
+Mostrar el nombre del departamento y el nombre del departamento del que dependen. 
+Realizar la consulta de cuatro formas distintas: con predicado IN, con predicado ANY, 
+con producto cartesiano y con JOIN.*/
 
 /*Con IN*/
 
 SELECT D1.NOMDE AS 'Departamento', D2.NOMDE AS 'Departamento dependiente'
 FROM tdepto D1
-WHERE (D1.PRESU<10000) AND D1.NUMDE IN (SELECT D2.DEPDE
+WHERE (D1.PRESU<10000) AND D1.NUMDE IN (SELECT D2.NOMDE
                                         FROM tdepto D2
                                         WHERE (D2.DEPDE=D1.NUMDE))
 ORDER BY D1.NOMDE ASC;
+
+SELECT * FROM tdepto;
+
+SELECT D1.NOMDE AS 'Departamento', D2.NOMDE AS 'Departamento dependiente'
+FROM tdepto D1 JOIN tdepto D2 ON (D1.DEPDE=D2.NUMDE)
+WHERE (D2.PRESU<10000)
+
+
+
+
+
+
+
+
+
+
 
 /*Con ANY*/
 

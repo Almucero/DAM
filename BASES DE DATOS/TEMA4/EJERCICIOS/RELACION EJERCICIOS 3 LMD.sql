@@ -39,7 +39,6 @@ ORDER BY NOMEM ASC;
 		• Que sea inferior a 1200 euros.
 		• Que sea superior al doble de su comisión.*/
 
-
 SELECT NUMEM, NOMEM, SALAR
 FROM temple
 WHERE (NUMHI>0) AND ((SALAR/NUMHI BETWEEN 0 AND 1200) OR (SALAR/NUMHI > 2*ISNULL(COMIS, 0)))
@@ -58,7 +57,8 @@ ORDER BY NOMEM ASC;
 SELECT NOMEM
 FROM temple
 WHERE NOMEM LIKE '%EZ,%__O'
-ORDER BY NOMEM ASC;
+ORDER BY NOMEM ASC;
+
 /*7.- Obtener, utilizando el predicado IN, por orden alfabético los nombres de los empleados del
       departamento 111 cuyo salario es igual a alguno de los salarios del departamento 112.
       ¿Cómo lo obtendrías con el predicado ANY?*/
@@ -86,7 +86,9 @@ ORDER BY NOMEM ASC;
 
 SELECT NOMEM, COMIS
 FROM temple
-WHERE (NUMDE=110) AND (COMIS IS NOT NULL)
+WHERE NUMDE=110 AND EXISTS(SELECT *
+	                       FROM temple
+						   WHERE NUMDE=110 AND COMIS IS NOT NULL)
 ORDER BY NOMEM ASC;
 
 /*9.- Obtener por orden alfabético los nombres de los departamentos que tienen algún empleado
@@ -103,7 +105,8 @@ FROM tdepto D
 WHERE EXISTS (SELECT NUMDE
 		      FROM temple E
 			  WHERE E.NUMDE=D.NUMDE AND COMIS IS NULL)
-ORDER BY NOMDE ASC;
+ORDER BY NOMDE ASC;
+
 /*CON ANY*/
 
 SELECT NOMDE
