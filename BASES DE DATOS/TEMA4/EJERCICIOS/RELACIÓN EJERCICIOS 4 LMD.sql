@@ -180,7 +180,8 @@
 
 	  SELECT D.NUMDE, ISNULL(E.NOMEM, 'Sin asignar') AS 'Nombre director', ISNULL(CONVERT(VARCHAR(12), E.EXTEL), 'Sin asignar') AS 'Extensiön telefónica'
 	  FROM tdepto D LEFT JOIN temple E ON (D.DIREC=E.NUMEM)
-	  WHERE NOMDE IN ('NOMINAS', 'ORGANIZACION', 'PERSONAL', 'COMPRAS Y LOGÍSTICA');
+	  WHERE NOMDE IN ('NOMINAS', 'ORGANIZACION', 'PERSONAL', 'COMPRAS Y LOGÍSTICA');
+
 /*15. Para cada departamento obtener el nombre y el nombre del departamento del que depende, si existe algún departamento que no depende de ningún otro, 
       el nombre del departamento debe salir igualmente y en la columna depde debe aparecer “No depende de ningún departamento.”*/
 
