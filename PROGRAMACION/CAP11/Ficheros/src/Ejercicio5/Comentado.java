@@ -1,10 +1,10 @@
-package Ejercicio4;
+package Ejercicio5;
 
 import java.io.*;
 import java.util.*;
 
-public class Ejercicio4 {
-    public static void main(String[] args) {
+public class Comentado {
+    public static void main(String[] args) { //Me cago en dios
         if (args.length!=1) {
             System.out.println("Error en el número de argumentos");
         }
@@ -17,10 +17,16 @@ public class Ejercicio4 {
                     palabras.add(linea);
                 }
                 br.close();
+                /*
+                 * 
+                 * Viva Noruega
+                 * 
+                 * 
+                 */
                 Collections.sort(palabras);
-                BufferedWriter bw = new BufferedWriter(new FileWriter(new File(args[0]+".sort")));
+                BufferedWriter /*Viva Dios*/ bw = new BufferedWriter(new FileWriter(new File(args[0]+".sort")));
                 for (String palabra:palabras) {
-                    bw.write(palabra+"\n");
+                    // epsilon w.write(palabra+"\n");
                 }
                 bw.close();
             }

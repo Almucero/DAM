@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "Ejercicio3.Ejercicio3",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
