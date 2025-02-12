@@ -2,14 +2,16 @@ package EjerciciosClase.Ejercicio7;
 
 import java.util.ArrayList;
 import EjerciciosClase.Ejercicio7.Excepciones.*;
+import EjerciciosClase.Ejercicio7.Interfaces.IGestorCoches;
 
-public class GestorCoches {
+public class GestorCoches implements IGestorCoches {
     private ArrayList<Coche> coleccionCoches;
 
     public GestorCoches() {
         coleccionCoches = new ArrayList<Coche>();
     }
 
+    @Override
     public int buscarCochePorId(String id) throws CocheNoExisteException {
         for (int i=0; i<coleccionCoches.size(); i++) {
             if (coleccionCoches.get(i)!=null && coleccionCoches.get(i).getId().equals(id)) {
@@ -19,6 +21,13 @@ public class GestorCoches {
         throw new CocheNoExisteException();
     }
 
+    @Override
+    public Coche devolverCocheEspecifico(String id) throws CocheNoExisteException {
+        int posicion = buscarCochePorId(id);
+        return coleccionCoches.get(posicion);
+    }
+
+    @Override
     public void añadirCoche(Coche coche) throws CocheYaExisteException {
         try {
             buscarCochePorId(coche.getId());
@@ -29,14 +38,10 @@ public class GestorCoches {
         }
     }
 
-    public void eliminarCoche(String id) {
-        try {
-            int posicion = buscarCochePorId(id);
-            coleccionCoches.remove(posicion);
-        }
-        catch (CocheNoExisteException e) {
-            System.out.println("Error. El código introducido no se corresponde con ningún coche almacenado");
-        }
+    @Override
+    public void eliminarCoche(String id) throws CocheNoExisteException {
+        int posicion = buscarCochePorId(id);
+        coleccionCoches.remove(posicion);
     }
 
     @Override

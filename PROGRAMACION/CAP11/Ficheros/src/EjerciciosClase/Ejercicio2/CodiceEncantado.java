@@ -1,4 +1,4 @@
-package EjerciciosClase.EjercicioMagia;
+package EjerciciosClase.Ejercicio2;
 
 import java.io.File;
 
