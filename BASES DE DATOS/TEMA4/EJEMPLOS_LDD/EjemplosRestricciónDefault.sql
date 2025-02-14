@@ -72,7 +72,7 @@ SELECT * FROM tabla4;
 /*
  -RESTRICCIÓN DEFAULT eligiendo el nombre.
  -Los nombres para las restricciones SON ÚNICOS en la base de datos.
- -Las restricciones de PRIMARY KEY, FOREIGN KEY y UNIQUE se pueden 
+ -Las restricciones de PRIMARY KEY, FOREIGN KEY, CHECK y UNIQUE se pueden 
   definirse como restricciones de tabla después de declarar todas
   las columnas, pero las restricciones DEFAULT sólo pueden declararse 
   en la definición de la columna.

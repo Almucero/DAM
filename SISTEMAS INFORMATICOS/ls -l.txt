@@ -1,0 +1,21 @@
+ls -l:
+
+d al principio -> directorio
+
+- delante -> fichero de texto normal
+
+primer número: cantidad 
+
+ls > fichero.txt -> vuelca contenidos del ls en el fichero
+
+ls -l fichero.txt -> devuelve solo el fichero, no todo como antes
+
+
+
+
+
+
+
+
+
+
