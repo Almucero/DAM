@@ -1,4 +1,4 @@
-package ejerciciosalumnos.Ejercicio1;
+package EjerciciosClase.Ejercicio1;
 
 
 public class FraseFlamenca implements FraseSerializable, Comparable<FraseFlamenca>{

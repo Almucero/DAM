@@ -1,5 +1,5 @@
 package EjercicioRaro;
 
-public class grupos {
+public class Grupo {
     
 }

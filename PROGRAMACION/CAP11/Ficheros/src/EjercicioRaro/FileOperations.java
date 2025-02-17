@@ -1,4 +1,4 @@
-package ejerciciosalumnos.Ejercicio1;
+package EjercicioRaro;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

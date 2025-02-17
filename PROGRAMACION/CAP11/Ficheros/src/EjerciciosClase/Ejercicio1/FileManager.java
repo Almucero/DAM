@@ -1,4 +1,4 @@
-package ejerciciosalumnos.Ejercicio1;
+package EjerciciosClase.Ejercicio1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

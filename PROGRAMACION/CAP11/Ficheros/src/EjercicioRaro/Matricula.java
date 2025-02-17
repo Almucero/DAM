@@ -1,5 +1,5 @@
 package EjercicioRaro;
 
-public class matriculas {
+public class Matricula {
     
 }
