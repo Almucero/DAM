@@ -17,6 +17,7 @@ public class Ejercicio4 {
                     palabras.add(linea);
                 }
                 br.close();
+
                 Collections.sort(palabras);
                 BufferedWriter bw = new BufferedWriter(new FileWriter(new File(args[0]+".sort")));
                 for (String palabra:palabras) {

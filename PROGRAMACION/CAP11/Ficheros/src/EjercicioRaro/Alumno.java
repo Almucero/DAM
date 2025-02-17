@@ -1,68 +1,80 @@
 package EjercicioRaro;
 
-public class Alumno {
+public class Alumno implements Comparable<Alumno>, Serializable{
     private Integer id;
+    private String apellidos;
     private String nombre;
-    private String apellido;
-    private String dni;
-    private Grupo grupo;
+    private String nie;
+    private Integer grupoId;
 
-    public Alumno(Integer id, String nombre, String apellido, String dni, Grupo grupo) {
+    public Alumno(Integer id, String apellidos, String nombre, String nie, Integer grupoId){
         this.id = id;
+        this.apellidos = apellidos;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.grupo = grupo;
+        this.nie = nie;
+        this.grupoId = grupoId;
     }
 
     public Integer getId() {
         return id;
     }
-    public void setId(Integer id) {
-        this.id = id;
+
+    public String getApellidos() {
+        return apellidos;
     }
+
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public String getNie() {
+        return nie;
     }
-    public String getApellido() {
-        return apellido;
+
+    public Integer getGrupoId() {
+        return grupoId;
     }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+
+
+    @Override
+    public String toString() {
+        return String.format(
+            """
+            ID: %d
+            Apellidos: %s
+            Nombre: %s
+            NIE: %s
+            Grupo: %d
+            """, id, apellidos, nombre, nie, grupoId );
     }
-    public String getDni() {
-        return dni;
-    }
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-    public Grupo getGrupo() {
-        return grupo;
-    }
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
-    }
+
 
     @Override
     public boolean equals(Object obj) {
-        if (this==obj) {
+        if(this==obj)
             return true;
-        }
-        if (obj==null || obj!=this.getClass()) {
+        if(!this.getClass().equals(obj.getClass()))
             return false;
-        }
-        Alumno alumno = (Alumno)obj;
-        return this.id == alumno.id;
+        return this.id == ((Alumno)obj).id;
     }
-    @Override
-    public int hashCode() {
-        return this.id.hashCode();
-    }
+
     @Override
     public int compareTo(Alumno o) {
-        return this.id.compareTo(o.id);
+        int compare = this.apellidos.compareTo(o.apellidos);
+        if(compare == 0)
+            return this.nombre.compareTo(o.nombre);
+        return compare;
     }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
+    @Override
+    public String serialize() {
+        return String.format("%d;%s;%s;%s;%d",id, apellidos, nombre, nie, grupoId);
+    }
+    
+    
 }

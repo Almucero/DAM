@@ -3,6 +3,7 @@ package EjerciciosClase.Ejercicio1;
 import java.util.List;
 
 public interface GFOperations {
+
     public FraseFlamenca anadeFrase(String frase);
 
     public boolean eliminaFrase(Integer id);

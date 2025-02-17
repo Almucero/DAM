@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejercicio5",
+            "request": "launch",
+            "mainClass": "Ejercicio5.Ejercicio5",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "Launch with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "Ejercicio1.Ejercicio1",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "Ejercicio2.Ejercicio2",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "Ejercicio3.Ejercicio3",
+            "projectName": "CAP11_baaa305d",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio4",
+            "request": "launch",
+            "mainClass": "Ejercicio4.Ejercicio4",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "Comentado",
+            "request": "launch",
+            "mainClass": "Ejercicio5.Comentado",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio6",
+            "request": "launch",
+            "mainClass": "Ejercicio6.Ejercicio6",
+            "projectName": "CAP11_baaa305d"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "EjerciciosClase.Ejercicio1.App",
+            "projectName": "CAP11_baaa305d",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "EjerciciosClase.Ejercicio7.Main",
+            "projectName": "CAP11_baaa305d"
+        }
+    ]
+}

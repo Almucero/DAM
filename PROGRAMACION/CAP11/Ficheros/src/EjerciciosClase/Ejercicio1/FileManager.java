@@ -1,14 +1,7 @@
 package EjerciciosClase.Ejercicio1;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class FileManager implements FileOperations{
     private File file;
@@ -18,10 +11,11 @@ public class FileManager implements FileOperations{
     }
 
     public List<String> leer() throws FileNotFoundException, IOException {
-        if(!file.exists())
+        if(!file.exists()) {
             return new ArrayList<>();
+        }
         BufferedReader br = new BufferedReader(new FileReader(this.file));
-        ArrayList<String> lineas = new ArrayList<>();
+        ArrayList<String> lineas = new ArrayList<String>();
         String linea = "";
         while((linea = br.readLine())!=null){
             lineas.add(linea);

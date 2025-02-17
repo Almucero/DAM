@@ -1,7 +1,6 @@
 package EjerciciosClase.Ejercicio1;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public interface FileOperations {

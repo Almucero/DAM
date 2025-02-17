@@ -1,9 +1,9 @@
-package Ejercicio5;
+
 
 import java.io.*;
 import java.util.*;
 
-public class Comentado {
+public class ComentadoEjercicio5 {
     public static void main(String[] args) { //Me cago en dios
         if (args.length!=1) {
             System.out.println("Error en el número de argumentos");
