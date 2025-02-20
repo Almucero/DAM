@@ -6,4 +6,5 @@ public abstract class Animal {
     private Granja granja;
 
     public abstract void relacionarse();
+
 }
