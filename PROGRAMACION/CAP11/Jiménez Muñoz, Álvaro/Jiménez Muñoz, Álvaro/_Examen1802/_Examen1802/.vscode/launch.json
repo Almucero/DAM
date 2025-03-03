@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "TestFase1",
+            "request": "launch",
+            "mainClass": "TestFase1",
+            "projectName": "_Examen1802_dcc72a25"
+        },
+        {
+            "type": "java",
+            "name": "Authenticator",
+            "request": "launch",
+            "mainClass": "Authenticator",
+            "projectName": "_Examen1802_dcc72a25"
+        },
+        {
+            "type": "java",
+            "name": "TestRunner",
+            "request": "launch",
+            "mainClass": "TestRunner",
+            "projectName": "_Examen1802_dcc72a25"
+        },
+        {
+            "type": "java",
+            "name": "Authenticator",
+            "request": "launch",
+            "mainClass": "Authenticator",
+            "projectName": "_Examen1802_a42592ae"
+        },
+        {
+            "type": "java",
+            "name": "TestFase2",
+            "request": "launch",
+            "mainClass": "TestFase2",
+            "projectName": "_Examen1802_a42592ae"
+        },
+        {
+            "type": "java",
+            "name": "TestRunner",
+            "request": "launch",
+            "mainClass": "TestRunner",
+            "projectName": "_Examen1802_a42592ae"
+        },
+        {
+            "type": "java",
+            "name": "TestFase1",
+            "request": "launch",
+            "mainClass": "TestFase1",
+            "projectName": "_Examen1802_a42592ae"
+        },
+        {
+            "type": "java",
+            "name": "TestRunner",
+            "request": "launch",
+            "mainClass": "TestRunner",
+            "projectName": "_Examen1502_a425876b",
+            "args": "users.data"
+        },
+        {
+            "type": "java",
+            "name": "TestFase2",
+            "request": "launch",
+            "mainClass": "TestFase2",
+            "projectName": "_Examen1502_a425876b"
+        },
+        {
+            "type": "java",
+            "name": "TestFase1",
+            "request": "launch",
+            "mainClass": "TestFase1",
+            "projectName": "_Examen1502_a425876b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Authenticator",
+            "request": "launch",
+            "mainClass": "Authenticator",
+            "projectName": "_Examen0802_aabef90d",
+            "args": "users.data"
+        }
+    ]
+}
