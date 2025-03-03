@@ -126,7 +126,7 @@ BEGIN TRANSACTION
 DELETE FROM carrera
 FROM carrera C LEFT JOIN participa P ON (C.CodCar=P.CodCar)
 WHERE YEAR(C.Fecha)=2025 AND
-      MONTH(C.Fecha)=12 AND 
+      MONTH(C.Fecha)=12 AND
 	  C.CodCar NOT IN (SELECT P2.CodCar
                        FROM participa P2);
 
@@ -138,9 +138,8 @@ SELECT NomCar AS 'Nombre carrera',
        FORMAT(Fecha, 'd') AS 'Fecha',
 	   NomPil AS 'Nombre piloto',
 	   ApePil AS 'Apellido piloto'
-FROM carrera C JOIN participa P ON (C.CodCar=P.CodCar)
-               JOIN piloto P2 ON (P.CodPil=P2.CodPil)
-WHERE YEAR(Fecha)=2024
+FROM carrera C JOIN piloto P ON (C.CodPilGan=P.CodPil)
+WHERE YEAR(Fecha)=YEAR(GETDATE())-1
 ORDER BY NomCar ASC;
 
 --EJERCICIO 7:
@@ -157,11 +156,9 @@ FROM piloto P JOIN participa P2 ON (P.CodPil=P2.CodPil)
 WHERE C.CodPilGan=P.CodPil
 UNION 
 SELECT DISTINCT P.CodPil AS 'Ganador o participante', NomPil, ApePil
-FROM piloto P JOIN participa P2 ON (P.CodPil=P2.CodPil)
-              JOIN carrera C ON (P2.CodCar=C.CodCar)
-WHERE C.CodPilGan<>P.CodPil
-      AND P.CodPil IN (SELECT CodPil
-                       FROM participa);
+FROM piloto P LEFT JOIN participa P2 ON (P.CodPil=P2.CodPil)
+              LEFT JOIN carrera C ON (P2.CodCar=C.CodCar)
+WHERE CodPilGan IS NULL;
 
 --EJERCICIO 8:
 
