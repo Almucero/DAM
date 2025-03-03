@@ -12,7 +12,7 @@ public class File implements FileEntry {
         this.createdAt = new Date();
     }
 
-    public File(String fileName, int nivel, Date createdAt2) {
+    public File(String fileName, int nivel) {
         this.fileName = fileName;
         this.nivel = nivel;
         this.createdAt = new Date();
@@ -25,7 +25,24 @@ public class File implements FileEntry {
 
     @Override
     public String getName() {
-        return fileName;
+        return this.fileName;
+    }
+
+    public int getNivel() {
+        return this.nivel;
+    }
+
+    public static String generarEspacios(int nivel) {
+        String espacios = "";
+        for (int i=0; i<nivel; i++) {
+            espacios += " ";
+        }
+        return espacios;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s|_%s %s", generarEspacios(2*this.nivel), this.fileName, this.createdAt);
     }
 }
 /** clase File 
