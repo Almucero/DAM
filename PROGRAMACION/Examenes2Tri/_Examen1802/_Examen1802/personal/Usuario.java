@@ -141,7 +141,7 @@ public class Usuario implements Serializador{
     public String serializar() {
         return String.format("%d;%s;%s;%s;%s", this.id, this.nombre, this.apellidos, this.email, this.contrasena);
     }
-
+    
     @Override
     public void deserializar(String datos) {
         String[] datosUsuario = datos.split(";");

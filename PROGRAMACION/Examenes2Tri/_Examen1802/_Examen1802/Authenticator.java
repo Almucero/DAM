@@ -7,7 +7,10 @@ import personal.Usuarios;
 public class Authenticator {
     public static String obtenerNombreDeArchivo(String[] args){
         // (3 puntos) TODO Comprueba que viene el argumento y devuelve el nombre del archivo en caso correcto
-        return null;
+        if (args.length!=0) {
+            return args[0];
+        }
+        return "";
     }
     public static void main(String[] args){
         String file;
@@ -15,7 +18,7 @@ public class Authenticator {
             // (2 puntos) TODO Indica un mensaje de error y sal del programa con System.exit(-1)
         }
         // (0 puntos) TODO si no sabes hacer lo anterior descomenta la siguiente línea
-        //file = "users.data";
+        file = "users.data";
         Scanner sc = new Scanner(System.in);
         try {
             Usuarios usuarios = new Usuarios(file);

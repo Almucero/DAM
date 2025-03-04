@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestRunner",
+            "request": "launch",
+            "mainClass": "TestRunner",
+            "projectName": "_Examen1802_ce5426df"
+        },
+        {
+            "type": "java",
+            "name": "Authenticator",
+            "request": "launch",
+            "mainClass": "Authenticator",
+            "projectName": "_Examen1802_ce5426df"
+        },
+        {
+            "type": "java",
             "name": "Authenticator",
             "request": "launch",
             "mainClass": "Authenticator",
