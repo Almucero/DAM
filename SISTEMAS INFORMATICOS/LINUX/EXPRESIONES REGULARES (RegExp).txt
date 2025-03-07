@@ -1,0 +1,23 @@
+EXPRESIONES REGULARES (RegExp)
+
+- LAS EXPRESIONES REGULARES SON PATRONES QUE PERMITEN IDENTIFICAR CADENAS QUE CUMPLEN UNA SERIE DE CONDICIONES DE UN PATRÓN.
+
+		EJ EMAIL: CARACTERES @ CARACTERES . CARACTERES
+			   1:N	          1:N           2:8
+                          A-Z a-z 0-9  A-Z a-z 0-9   A-Z a-z 0-9
+
+- CUANTIFCADORES:
+
+   * -> 0 o más veces (a* -> a 0 o más veces) (ab*c -> b 0 o más veces) ((ab)*c -> ab 0 o más veces)
+   + -> 1 o más veces 
+   {n} -> n veces ({2}a -> a 2 veces seguidas)
+   {n,m} -> como mínimo n veces y como máximo m veces (a{2,3} -> a 2 veces mínimo y máximo 3)
+   . -> cualquier carácter (a.{2,3}a -> agua -> empieza y acaba por a y tiene 2 a pero no más de 3)
+   \ -> para buscar caracteres que son cuantificadores (\. -> para buscar ".")
+   [ ] -> opcional pero obligatorio, se permiten rangos ([A-Z] -> todos mayuscula [a-z] -> todo minúscula) ([A-Za-z] -> ambas) ([ a | b ] -> a o b)
+   ^ -> comienza por
+   $ -> termina por (a% -> toda la cadena termina por a) (^a.*a$ -> empieze por a, luego lo que sea y que termine por a -> casa -> asa (no estricto))
+   [^ ] -> no lo que haya dentro (-v) ([^1-0] -> no del 1 al 9 -> 0 sí)
+
+		EJ EMAIL: [A-Za-z0-9\._\-]+@[A-Za-z0-9\._\-]+\.[A-Za-z0-9]{2,10}
+[0-2][0-9]{0,2}
