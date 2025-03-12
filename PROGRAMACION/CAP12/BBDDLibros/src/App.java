@@ -9,19 +9,22 @@ public class App {
         Connection conexion = null;
         Statement sentencia = null;
         Statement sentencia2 = null;
+        Statement sentenia3 = null;
         ResultSet resultado = null;
         ResultSet resultado2 = null;
+        ResultSet resultado3 = null;
 
         try {
             conexion = DriverManager.getConnection(url, usuario, clave);
             String sql = "SELECT ISBN, NumeroCopias, NombreEditorial, TituloLibro FROM librosoriginal";
             String sql2 = "SELECT DNI, Nombre, PrimerApellido, SegundoApellido, Edad, Nacionalidad, Direccion, Genero FROM comprador";
-            /*String sql3 = "SELECT DNI, ISBN, PuntoVenta, Unidades FROM compra";*/
+            String sql3 = "SELECT DNI, ISBN, PuntoVenta, Unidades FROM compra";
             sentencia = conexion.createStatement();
             sentencia2 = conexion.createStatement();
-
+            sentenia3 = conexion.createStatement();
             resultado = sentencia.executeQuery(sql);
             resultado2 = sentencia2.executeQuery(sql2);
+            resultado3 = sentenia3.executeQuery(sql3);
 
             while(resultado.next()) {
                 String ISBN = resultado.getString("ISBN");
