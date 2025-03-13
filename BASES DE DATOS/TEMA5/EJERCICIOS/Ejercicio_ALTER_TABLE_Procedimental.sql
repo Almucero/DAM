@@ -1,6 +1,6 @@
-﻿CREATE DATABASE Ejercicio_ALTER_TABLE7
+﻿CREATE DATABASE Ejercicio_ALTER_TABLE_Procedimental
 GO
-USE Ejercicio_ALTER_TABLE7
+USE Ejercicio_ALTER_TABLE_Procedimental
 GO
 
 --Se crea la tabla original
@@ -67,14 +67,11 @@ VALUES (1234567890,355,'Ediciones Revolución Roja','El libro rojo de Mao - Mao 
 
 SELECT * FROM LibrosOriginal;
 
---Se comprueba que no se pueden insertan libros con ISBN de longitud que no sea 10
-INSERT INTO LibrosOriginal 
-VALUES ('1234567890123',100,'Editorial Prueba','Libro Prohibido'), --13 caracteres
-       ('123456789',200,'Editorial Falsa','Libro Falso'); --9 caracteres
+--Creación del procedimiento que normaliza la base de datos (Ejercicio_ALTER_TABLE)
+CREATE PROCEDURE normalizacion
+AS
+BEGIN
 
-SELECT * FROM LibrosOriginal;
-
---Se crea la tabla Editorial y Titulo
 CREATE TABLE Editorial
 (
  CodEdi INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -85,72 +82,42 @@ CREATE TABLE Titulo
  CodTit INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
  TituloLibro VARCHAR(200) NOT NULL UNIQUE
 );
-
---Se insertan los datos correspondientes en las tablas creadas
 INSERT INTO Editorial (NombreEditorial)
 SELECT DISTINCT NombreEditorial
 FROM LibrosOriginal;
-
 INSERT INTO Titulo (TituloLibro)
 SELECT DISTINCT TituloLibro
 FROM LibrosOriginal;
-
-SELECT * FROM Editorial;
-SELECT * FROM Titulo;
-
---Se elimina la restriccion de PK de ISBN de la tabla original de libros
 ALTER TABLE LibrosOriginal DROP CONSTRAINT PK_LibrosOriginal;
-
---Se crea la nueva columna en la tabla de libros para almacenar el código único que será la nueva PK
 ALTER TABLE LibrosOriginal ADD CodLib INT IDENTITY(1,1) NOT NULL;
-SELECT * FROM LibrosOriginal;
-
---Se otorga a dicha columna la restriccion de PK de la tabla de libros
 ALTER TABLE LibrosOriginal ADD CONSTRAINT PK_Libros PRIMARY KEY (CodLib);
-
---Se añaden las columnas para almacenar los códigos PKs de las tablas Editorial y Libro (Se establecerán a NULL por ahora)
 ALTER TABLE LibrosOriginal ADD CodEdi INT NULL, CodTit INT NULL;
-SELECT * FROM LibrosOriginal;
-
---Se relacionan las nuevas columnas creadas con su respectivo valor en las tablas Editorial y Titulo mediante los valores comunes 
 UPDATE LibrosOriginal
 SET CodEdi=E.CodEdi
 FROM LibrosOriginal L JOIN Editorial E ON (L.NombreEditorial=E.NombreEditorial);
-
 UPDATE LibrosOriginal
 SET CodTit=T.CodTit
 FROM LibrosOriginal L JOIN Titulo T ON (L.TituloLibro=T.TituloLibro);
-
-SELECT * FROM LibrosOriginal;
-
---Una vez hecho eso ya no es necesario tener almacenados esos valores en la tabla de lirbos por lo que se pueden eliminar
 ALTER TABLE LibrosOriginal DROP COLUMN NombreEditorial, TituloLibro;
-SELECT * FROM LibrosOriginal;
-
---Con eso hecho quedaría relacionar correctamente las tablas añadiendo restricciones FK
 ALTER TABLE LibrosOriginal ADD CONSTRAINT FK_Libros_Editorial FOREIGN KEY (CodEdi) REFERENCES Editorial(CodEdi) ON DELETE NO ACTION ON UPDATE CASCADE;
 ALTER TABLE LibrosOriginal ADD CONSTRAINT FK_Lirbos_Titulo FOREIGN KEY (CodTit) REFERENCES Titulo(CodTit) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---Se cambia la restriccion del ISBN para que en vez de aceptar únicamente 10 carácteres acepte 13 también,
---además se le da la restricción unique, antes inecesaria debido a que era la PK de la tabla
 ALTER TABLE LibrosOriginal ALTER COLUMN ISBN CHAR(13) NOT NULL;
 ALTER TABLE LibrosOriginal DROP CONSTRAINT LongitudISBN;
 ALTER TABLE LibrosOriginal ADD CONSTRAINT LongitudISBN CHECK (DATALENGTH(ISBN)=13 OR DATALENGTH(ISBN)=10);
 ALTER TABLE LibrosOriginal ADD CONSTRAINT UNIQUE_Libros_ISBN UNIQUE (ISBN);
-
---Se insertan nuevos lirbos cuyos ISBN tengan una longitud de 13 o 10, comprobando que solo se permiten estos valores
-INSERT INTO LibrosOriginal
-VALUES ('2574984960', 150, NULL, NULL), --10 caracteres
-       ('0675368086523', 250, NULL, NULL); --13 caracteres
-
-INSERT INTO LibrosOriginal
-VALUES ('345673', 500, NULL, NULL), --6 caracteres
-       ('12345678901236', 400, NULL, NULL); --14 caracteres
-
-SELECT * FROM LibrosOriginal;
-
---Se cambia el nombre de la tabla de lirbos
 EXEC sp_rename 'LibrosOriginal', 'Libros';
 
+PRINT 'La base de datos ha sido normalizada con éxito';
+END;
+
+--Ejecución del procedimiento (normalización de la base de datos)
+EXEC normalizacion
+
 SELECT * FROM Libros;
-SELECT * FROM LibrosOriginal; --Ya no va
+SELECT * FROM Editorial;
+SELECT * FROM Titulo;
+
+SELECT * FROM LibrosOriginal; --Ya no funciona
+
+SELECT COUNT(*) FROM Titulo WHERE TituloLibro LIKE '%Desconocido%';
+SELECT COUNT(*) FROM Titulo WHERE TituloLibro NOT LIKE '%Desconocido%';
