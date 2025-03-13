@@ -47,7 +47,7 @@ public class AlumnosService implements CRUD<Alumno>, DataSetInterface{
         Statement statement = null;
         Alumno result = null;
         statement = this.conn.createStatement();    
-        String sql = String.format("SELECT id, nombre, apellidos FROM alumnos WHERE id=%d", id);
+        String sql = String.format("SELECT id, nombre, apellidos, grupo_id FROM alumnos WHERE id=%d", id);
         // Ejecución de la consulta
         ResultSet querySet = statement.executeQuery(sql);
         // Recorrido del resultado de la consulta
