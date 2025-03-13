@@ -220,9 +220,9 @@ public class App {
             System.out.println("Los valores no pueden ser nulos");
             return;
         }
-        System.out.print("Introduzca el código del grupo al que pertenece: ");
+        System.out.print("Introduzca el código del grupo al que pertenece o nada si es no tiene: ");
         Long codigo = Long.parseLong(System.console().readLine());
-        if (!comprobarExistenciaGrupoPorId(codigo, gservice)) {
+        if (codigo!=null && !comprobarExistenciaGrupoPorId(codigo, gservice)) {
             System.out.println("El código introducido no corresponde con ningun grupo existente");
             return;
         }
@@ -266,6 +266,18 @@ public class App {
             }
         }
         System.out.print("Introduzca el código del grupo al que pretence: ");
+        Long codigo = Long.parseLong(System.console().readLine());
+        if (codigo==null) {
+            try {
+                codigo = aservice.requestById(id).getGrupoId();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (!comprobarExistenciaGrupoPorId(codigo, gservice)) {
+            System.out.println("El código introducido no corresponde a ningun grupo almacenado");
+            return;
+        }
 
     }
     public static void borrarAlumno(AlumnosService aservice) {
