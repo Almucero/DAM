@@ -1,0 +1,12 @@
+BASH LINUX -> (Bash, CSH, ZSH)
+L--> SCRIPTS BASH
+
+$(sin ruta)comando 1 -> PATH: dir1, dir2, dir3, dir4...
+$ruta/comando 1 -> Busca en la ruta y si no lo encuentra busca en el PATH
+$miscript.sh param1 param2 param3 …    $# -> 3
+<----$0----> <-$1-> <-$2-> <-$3->
+             <----------$*--------->
+
+" " -> sustituir variables
+' ' -> literal
+` ` -> sustituir variables y ejecutar
