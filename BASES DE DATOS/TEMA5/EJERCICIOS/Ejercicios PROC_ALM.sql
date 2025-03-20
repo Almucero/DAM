@@ -119,30 +119,102 @@ DECLARE @valor6 INT;
 EXEC @valor6=proc6;
 PRINT @valor6;
 
-/*7. Hacer un procedimiento almacenado que indique mediante un texto, si existe un
-determinado curso cuyo nombre se le pasa como parámetro. Hacer el ejercicio de
-tres maneras:*/
+/*7. Hacer un procedimiento almacenado que indique mediante un texto, si existe un 
+determinado curso cuyo nombre se le pasa como parámetro. Hacer el ejercicio de 
+tres maneras: 
 
-/*A. Con la instrucción PRINT dentro del procedimiento almacenado. (proc7A)*/
+A. Con la instrucción PRINT dentro del procedimiento almacenado. (proc7A) */
 
+CREATE OR ALTER PROCEDURE proc7A @NomCurso VARCHAR(50)
+AS
+BEGIN
 
+IF  EXISTS (SELECT NomCurso FROM curso WHERE NomCurso LIKE @NomCurso)
+BEGIN
+PRINT 'EXISTE EL CURSO'
+END
+ELSE 
+BEGIN
+PRINT 'NO EXISTE EL CURSO'
+END 
 
-/*B. Con la instrucción RETURN dentro del procedimiento almacenado, de modo que
-si se devuelve 1 indicará que el curso existe y si devuelve 2 indicará que no.
-Cuando ejecutes el procedimiento almacenado, utiliza la instrucción PRINT para
-mostrar el mensaje correspondiente dependiendo del valor devuelto. (proc7B)*/
+END;
 
+DECLARE @valor INT;
+EXECUTE @valor=proc7A'INGLES';
+PRINT @valor;
 
+/*B. Con la instrucción RETURN dentro del procedimiento almacenado, de modo que 
+si se devuelve 1 indicará que el curso existe y si devuelve 2 indicará que no. 
+Cuando ejecutes el procedimiento almacenado, utiliza la instrucción PRINT para 
+mostrar el mensaje correspondiente dependiendo del valor devuelto. (proc7B) */
 
-/*C. Utilizando un parámetro de salida donde depositamos el mensaje y en la ejecución
-mostramos el parámetro de salida. (proc7C).*/
+CREATE OR ALTER PROCEDURE proc7B @NomCurso VARCHAR(50)
+AS
+BEGIN
 
+IF EXISTS (SELECT NomCurso FROM curso WHERE NomCurso LIKE @NomCurso)
+BEGIN
+PRINT 'EXISTE EL CURSO'
+RETURN 1
+END
+ELSE 
+BEGIN
+PRINT 'NO EXISTE EL CURSO'
+RETURN 2
+END 
 
+END;
 
-/*D. Ejecuta de nuevo el procedimiento almacenado realizado según la primera forma
-y muestra el valor de estado.*/
+DECLARE @valor INT;
+EXECUTE @valor=proc7B'INGLES';
+PRINT @valor;
 
+/*C. Utilizando un parámetro de salida donde depositamos el mensaje y en la ejecución 
+mostramos el parámetro de salida. (proc7C). */
 
+CREATE OR ALTER PROCEDURE proc7C @NomCurso VARCHAR(50),@MENSAJE VARCHAR(50) OUTPUT
+AS
+BEGIN
+
+IF EXISTS (SELECT NomCurso FROM curso WHERE NomCurso LIKE @NomCurso)
+BEGIN
+SET @MENSAJE='EXISTE EL CURSO'
+PRINT @MENSAJE
+END
+ELSE 
+BEGIN
+SET @MENSAJE='NO EXISTE EL CURSO'
+PRINT @MENSAJE
+END 
+
+END;
+
+DECLARE @MEN VARCHAR(50);
+EXEC proc7C 'INGLES',@MEN OUTPUT;
+PRINT @MEN;
+
+/*D. Ejecuta de nuevo el procedimiento almacenado realizado según la primera forma 
+y muestra el valor de estado. */
+
+CREATE OR ALTER PROCEDURE proc7A @NomCurso VARCHAR(50)
+AS
+BEGIN
+
+IF  EXISTS (SELECT NomCurso FROM curso WHERE NomCurso LIKE @NomCurso)
+BEGIN
+PRINT 'EXISTE EL CURSO'
+END
+ELSE 
+BEGIN
+PRINT 'NO EXISTE EL CURSO'
+END 
+
+END;
+
+DECLARE @valor INT;
+EXECUTE @valor=proc7A'INGLES';
+PRINT @valor;
 
 /*8. Crear un procedimiento almacenado que tenga un parámetro de entrada y muestre un
 mensaje.*/
